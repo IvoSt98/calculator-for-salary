@@ -1,5 +1,7 @@
 from tabulate import tabulate
 
+"""Global storage"""
+data = []
 def start():
 
     """ 
@@ -47,7 +49,7 @@ def calculate_income(income):
     living = 0.2 * income
     return needs, savings, living
 
-def build_table(needs, savings, living, name, needs_value, savings_value, living_value):
+def build_table(needs, savings, living, name, needs_value, savings_value, living_value ):
     """ 
     The function, build a table with tabulate.
     Print first the headers. After that the income.
@@ -56,16 +58,15 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["-", f"${needs}", f"${savings}", f"${living}"]]
     table= [[f"{name}", f"{needs_value}",f"{savings_value}",f"{ living_value}"]]
-    whole_table= info_income + table
+    data.append(table[0])
+    whole_table= info_income + data
     print(tabulate(whole_table, headers=headers, tablefmt="simple"))
-
 
 def take_data():
     """
     The function take data from the user.
     Check the inputs if it's validate.
     """
-    
     while True:
         name = input("Enter new name: ")
         if name.isalpha():
@@ -93,24 +94,27 @@ def take_data():
             break
         except:
             print("Invalid data, please add only numbers:")
-    
+
     return name, needs_value, savings_value, living_value 
     
 
-def continue_or_not():
-    question = input("Do you want to continue with adding data? (yes/no):")
-    if  question.lower() == 'yes':
-        take_data()
-    elif question.lower() == 'no':
-        build_table(needs, savings, living, name, needs_value, savings_value, living_value)
-    else:
-        print("Invalid input, please add yes or no values!")
-        return continue_or_not()
+def continue_or_not(needs, savings, living, name, needs_value, savings_value, living_value):
+    while True:
+        question = input("Do you want to continue with adding data? (yes/no):\n")
+        if  question.lower() == 'yes':
+            name, needs_value, savings_value, living_value = take_data()
+            build_table(needs, savings, living, name, needs_value, savings_value, living_value )
+        elif question.lower() == 'no':
+            build_table(needs, savings, living, name, needs_value, savings_value, living_value )
+        else:
+            print("Invalid input, please add yes or no values!")
+            continue_or_not(needs, savings, living, name, needs_value, savings_value, living_value)
+            
+#start()
+income = get_income()
+needs, savings, living = calculate_income(income)
+name, needs_value, savings_value, living_value = take_data()
+build_table(needs, savings, living, name, needs_value, savings_value, living_value)
+continue_or_not(needs, savings, living, name, needs_value, savings_value, living_value)
 
-def main():
-    #start()
-    income = get_income()
-    needs, savings, living = calculate_income(income)
-    name, needs_value, savings_value, living_value = take_data()
-    continue_or_not()
-main()
+
