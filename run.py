@@ -59,11 +59,13 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     whole_table= info_income + table
     print(tabulate(whole_table, headers=headers, tablefmt="simple"))
 
+
 def take_data():
     """
     The function take data from the user.
     Check the inputs if it's validate.
     """
+    
     while True:
         name = input("Enter new name: ")
         if name.isalpha():
@@ -72,18 +74,21 @@ def take_data():
             print("Invalid data, please add only letters!")
     while True:
         try:
-            needs_value = float(input(f"Enter new Needs: "))
+            print("If your expense it is not Needs, then add value - 0")
+            needs_value = float(input(f"Enter value for Needs: "))
             break
         except:
             print("Invalid data, please add only numbers:")
     while True:
         try:
+            print("If your expense it is not Savings/Investments, then add value - 0")
             savings_value = float(input(f"Enter new Savings/Investments: "))
             break
         except:
             print("Invalid data, please add only numbers:")
     while True:
         try:
+            print("If your expense it is not Living Expenses, then add value - 0")
             living_value = float(input(f"Enter new Living Expenses: "))
             break
         except:
@@ -91,8 +96,21 @@ def take_data():
     
     return name, needs_value, savings_value, living_value 
     
+
+def continue_or_not():
+    question = input("Do you want to continue with adding data? (yes/no):")
+    if  question.lower() == 'yes':
+        take_data()
+    elif question.lower() == 'no':
+        build_table(needs, savings, living, name, needs_value, savings_value, living_value)
+    else:
+        print("Invalid input, please add yes or no values!")
+        return continue_or_not()
+
+
 #start()
 income = get_income()
 needs, savings, living = calculate_income(income)
 name, needs_value, savings_value, living_value = take_data()
-build_table(needs, savings, living, name, needs_value, savings_value, living_value)
+continue_or_not()
+
