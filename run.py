@@ -47,35 +47,31 @@ def calculate_income(income):
     living = 0.2 * income
     return needs, savings, living
 
-def build_table(needs, savings, living, name_table, value_for_needs_table):
+def build_table(needs, savings, living, name, needs_value, savings_value, living_value):
+    """ 
+    The function, build a table with tabulate.
+    Print first the headers. After that the income.
+    And the last the values for name, needs, savings and living.
+    """
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["-", f"${needs}", f"${savings}", f"${living}"]]
-    table= [[f"{name_table}", f"{value_for_needs_table}"]]
+    table= [[f"{name}", f"{needs_value}",f"{savings_value}",f"{ living_value}"]]
     whole_table= info_income + table
     print(tabulate(whole_table, headers=headers, tablefmt="simple"))
 
-def take_name():
+def take_data():
+    """
+    The function take data from the user.
+    """
     name = input(f"Enter new name: ")
-    return name
-def add_name(name):
-    name_table = name
-    return name_table
-
-def take_needs():
     needs_value = input(f"Enter new Needs: ")
-    return needs_value
-def add_needs(needs_value):
-    value_for_needs_table = needs_value
-    return value_for_needs_table
+    savings_value = input(f"Enter new Savings/Investments: ")
+    living_value = input(f"Enter new Living Expenses: ")
+    return name, needs_value, savings_value, living_value
+
 
 #start()
 income = get_income()
 needs, savings, living = calculate_income(income)
-
-name = take_name()
-name_table = add_name(name)
-
-needs_value = take_needs()
-value_for_needs_table= add_needs(needs_value)
-
-build_table(needs, savings, living, name_table, value_for_needs_table)
+name, needs_value, savings_value, living_value = take_data()
+build_table(needs, savings, living, name, needs_value, savings_value, living_value)
