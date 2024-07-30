@@ -47,12 +47,25 @@ def calculate_income(income):
     living = 0.2 * income
     return needs, savings, living
 
-def build_table(needs, savings, living):
-    table = ["Needs", "Savings/Investments", "Living Expenses"]
-    info_income = [[f"${needs}", f"${savings}", f"${living}"]]
-    print(tabulate(info_income, headers=table, tablefmt="simple"))
+def build_table(needs, savings, living, name_table):
+    table = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
+    info_income = [["-", f"${needs}", f"${savings}", f"${living}"]]
+    needs= [[f"{name_table}"]]
+    iso= info_income + needs
+    #print(tabulate(needs, headers=table, tablefmt="simple"))
+    #print(tabulate(info_income, headers=table, tablefmt="simple"))
+    print(tabulate(iso, headers=table, tablefmt="simple"))
+
+def take_name():
+    name = input(f"Enter new name: ")
+    return name
+def caclulate_needs(name):
+    name_table = name
+    return name_table
 
 #start()
 income = get_income()
 needs, savings, living = calculate_income(income)
-build_table(needs, savings, living)
+name = take_name()
+name_table = caclulate_needs(name)
+build_table(needs, savings, living, name_table)
