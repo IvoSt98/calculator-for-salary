@@ -107,10 +107,10 @@ def continue_or_not():
         print("Invalid input, please add yes or no values!")
         return continue_or_not()
 
-
-#start()
-income = get_income()
-needs, savings, living = calculate_income(income)
-name, needs_value, savings_value, living_value = take_data()
-continue_or_not()
-
+def main():
+    #start()
+    income = get_income()
+    needs, savings, living = calculate_income(income)
+    name, needs_value, savings_value, living_value = take_data()
+    continue_or_not()
+main()
