@@ -62,14 +62,35 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
 def take_data():
     """
     The function take data from the user.
+    Check the inputs if it's validate.
     """
-    name = input(f"Enter new name: ")
-    needs_value = input(f"Enter new Needs: ")
-    savings_value = input(f"Enter new Savings/Investments: ")
-    living_value = input(f"Enter new Living Expenses: ")
-    return name, needs_value, savings_value, living_value
-
-
+    while True:
+        name = input("Enter new name: ")
+        if name.isalpha():
+            break
+        else:
+            print("Invalid data, please add only letters!")
+    while True:
+        try:
+            needs_value = float(input(f"Enter new Needs: "))
+            break
+        except:
+            print("Invalid data, please add only numbers:")
+    while True:
+        try:
+            savings_value = float(input(f"Enter new Savings/Investments: "))
+            break
+        except:
+            print("Invalid data, please add only numbers:")
+    while True:
+        try:
+            living_value = float(input(f"Enter new Living Expenses: "))
+            break
+        except:
+            print("Invalid data, please add only numbers:")
+    
+    return name, needs_value, savings_value, living_value 
+    
 #start()
 income = get_income()
 needs, savings, living = calculate_income(income)
