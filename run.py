@@ -51,6 +51,7 @@ def get_income():
             print("Enter your income (at least 4 digits):")
             user_income = input("")
             income = float(user_income)
+            clearScreen()
             if income >= 1000:  
                 return income
             else:
@@ -87,14 +88,13 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     whole_table_with_calculation = info_income + data + calculation 
     while True:
         try:
-            print()
             print("Do you want to see the table?")
             print()
             print("Write 'yes' to see the table without calculations!")
             print("Write 'no' to see the table with calculations.")
             print("Write 'continue' to add more data.")
-            print()
             show_the_table = input("")
+            clearScreen()
             if show_the_table.lower() == 'yes':
                 print(tabulate(whole_table, headers=headers, tablefmt="simple"))
                 menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
@@ -104,7 +104,7 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
             elif show_the_table.lower() == 'continue':
                 menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
             else:
-                raise ValueError("Invalid input: Please select one of the options (yes/no).\n")
+                raise ValueError("Invalid input: Please select one of the options (yes/no/continue).\n")
         except ValueError as e:
             print(e)
           
@@ -114,27 +114,27 @@ def take_data():
     Check the inputs if it's validate.
     """
     while True:
-        print()
         print("Please provide name for the data which you will add...")
         name = input("")
+        clearScreen()
         if name.isalpha():
             break
         else:
             print("Invalid data, please add only letters!")
     while True:
         try:
-            print()
             print("If your expense it is not Needs, then add value - 0")
             print("Enter value for Needs:")
             needs_value = float(input(""))
-            print()
+            clearScreen()
             print("If your expense it is not Savings/Investments, then add value - 0")
             print("Enter new Savings/Investments:")
             savings_value = float(input(""))
-            print()
+            clearScreen()
             print("If your expense it is not Living Expenses, then add value - 0")
             print("Enter new Living Expenses:")
             living_value = float(input(""))
+            clearScreen()
             break
         except Exception:
             print("Invalid data, please add only numbers:")
@@ -156,6 +156,7 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
         print()
         print("Do you want to continue with adding data? (yes/no):")
         question = input("")
+        clearScreen()
         if question.lower() == 'yes':
             name, needs_value, savings_value, living_value = take_data()
             calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
