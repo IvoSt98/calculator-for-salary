@@ -54,20 +54,34 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     """ 
     The function, build a table with tabulate.
     Print first the headers. After that the income.
-    And the last the values for name, needs, savings and living.
+    And save the values for name, needs, savings and living, after that 
+    print it to the table.
+    User choice to choose to see the table without calculation, with 
+    calcultations or to continue with additing data.
     """
 
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
-    info_income = [["-", f"${needs}", f"${savings}", f"${living}"]]
-    table= [[f"{name}", f"{needs_value}",f"{savings_value}",f"{ living_value}"]]
+    info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
+    table = [[f"{name}", f"{needs_value}",f"{savings_value}",f"{living_value}"]]
+    #calculation = [["Calculation:", f"{calculation_savings}",f"{calculation_savings}",f"{calculation_living}"]]
     data.append(table[0])
-    whole_table= info_income + data 
+    whole_table = info_income + data
+    #whole_table_with_calculation = info_income + data + calculation 
+ 
     try:
-        show_the_table = input("Do you want to see the table?) yes/no: ")
+        print()
+        print("Do you want to see the table?")
+        print("Write 'yes' to see the table without calculations!")
+        print("Write 'no' to see the table with calculations.")
+        print("Write 'continue' to add more data.\n")
+        show_the_table = input("yes/no/continue:")
         if show_the_table.lower() == 'yes':
             print(tabulate(whole_table, headers=headers, tablefmt="simple"))
         elif show_the_table.lower() == 'no':
-            print()
+            #print(tabulate(whole_table_with_calculation, headers=headers, tablefmt="simple"))
+            menu(needs, savings, living, name, needs_value, savings_value, living_value)
+        elif show_the_table.lower() == 'continue':
+            menu(needs, savings, living, name, needs_value, savings_value, living_value)
         else:
             raise ValueError("Invalid input: Please select one of the options (yes/no).\n")
     except ValueError as e:
@@ -109,7 +123,7 @@ def take_data():
     return name, needs_value, savings_value, living_value 
     
 def menu(needs, savings, living, name, needs_value, savings_value, living_value):
-    
+
     while True:
         question = input("Do you want to continue with adding data? (yes/no):\n")
         if  question.lower() == 'yes':
