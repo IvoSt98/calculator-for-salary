@@ -1,8 +1,9 @@
 from tabulate import tabulate
 import os
 
-"""Global storage"""
-data = []
+"""Global const"""
+DATA = []
+
 
 def start():
     """
@@ -37,10 +38,12 @@ def start():
     print()
     print("Good Luck!\n")
 
+
 # Code adapted from: https://www.101computing.net/python-typing-text-effect/
 def clearScreen():
   os.system("clear")
   
+
 def get_income():
     """
     The function calculate the sum to be always float, if it's a string it'll be 
@@ -58,6 +61,7 @@ def get_income():
                 print("Income must be at least 4 digits. Please try again.")
         except ValueError:
             print("Invalid data. Please enter a number with at least 4 digits.")
+
 
 def calculate_income(income):
     """ 
@@ -81,11 +85,11 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     """
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
-    table = [[f"{name}", f"{needs_value}", f"{savings_value}", f"{living_value}"]]
-    calculation = [["Calculation:", f"{calculation_needs}", f"{calculation_savings}", f"{calculation_living}"]]
-    data.append(table[0])
-    whole_table = info_income + data
-    whole_table_with_calculation = info_income + data + calculation 
+    table = [[f"{name}", f"${needs_value}", f"${savings_value}", f"${living_value}"]]
+    calculation = [["Calculation:", f"${calculation_needs}", f"${calculation_savings}", f"${calculation_living}"]]
+    DATA.append(table[0])
+    whole_table = info_income + DATA
+    whole_table_with_calculation = info_income + DATA + calculation 
     while True:
         try:
             print("Do you want to see the table?")
@@ -107,7 +111,8 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
                 raise ValueError("Invalid input: Please select one of the options (yes/no/continue).\n")
         except ValueError as e:
             print(e)
-          
+
+
 def take_data():
     """
     The function take data from the user.
@@ -140,6 +145,7 @@ def take_data():
             print("Invalid data, please add only numbers:")
     return name, needs_value, savings_value, living_value 
 
+
 def calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value):
     """ The def subtracts right operand from 
     the left operand and assign the result to left operand.
@@ -149,6 +155,7 @@ def calculate_expenses(calculation_needs, calculation_savings, calculation_livin
     calculation_savings -= savings_value
     calculation_living -= living_value
     return calculation_needs, calculation_savings, calculation_living
+
 
 def menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
 
@@ -166,6 +173,7 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
         else:
             print("Invalid input, please add yes or no values!")
    
+
 def main():
     """ 
     Calling all defs 
