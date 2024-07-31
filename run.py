@@ -72,8 +72,7 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
             raise ValueError("Invalid input: Please select one of the options (yes/no).\n")
     except ValueError as e:
             print(e)
-    
-        
+      
 def take_data():
     """
     The function take data from the user.
@@ -109,9 +108,11 @@ def take_data():
 
     return name, needs_value, savings_value, living_value 
     
-
-def continue_or_not(needs, savings, living, name, needs_value, savings_value, living_value):
-
+def main():
+    income = get_income()
+    needs, savings, living = calculate_income(income)
+    name, needs_value, savings_value, living_value = take_data()
+    build_table(needs, savings, living, name, needs_value, savings_value, living_value)
 
     while True:
         question = input("Do you want to continue with adding data? (yes/no):\n")
@@ -122,13 +123,8 @@ def continue_or_not(needs, savings, living, name, needs_value, savings_value, li
             break
         else:
             print("Invalid input, please add yes or no values!")
-            continue_or_not(needs, savings, living, name, needs_value, savings_value, living_value)
    
-#start()
-income = get_income()
-needs, savings, living = calculate_income(income)
-name, needs_value, savings_value, living_value = take_data()
-build_table(needs, savings, living, name, needs_value, savings_value, living_value)
-continue_or_not(needs, savings, living, name, needs_value, savings_value, living_value)
-
+if __name__ == "__main__":
+    start()
+    main()
  
