@@ -85,13 +85,13 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     """
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
-    DATA.append([f"{name}", f"${needs_value}", f"${savings_value}", f"${living_value}"])
+    table = [[f"{name}", f"${needs_value}", f"${savings_value}", f"${living_value}"]]
+    DATA.append(table[0])
     calculation = [["Calculation:", f"${calculation_needs}", f"${calculation_savings}", f"${calculation_living}"]]
     whole_table = info_income + DATA
     whole_table_with_calculation = info_income + DATA + calculation 
     while True:
         try:
-            print("Do you want to see the table?")
             print()
             print("Write 'yes' to see the table without calculations!")
             print("Write 'no' to see the table with calculations.")
@@ -100,10 +100,8 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
             clearScreen()
             if show_the_table.lower() == 'yes':
                 print(tabulate(whole_table, headers=headers, tablefmt="simple"))
-                menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
             elif show_the_table.lower() == 'no':
                 print(tabulate(whole_table_with_calculation, headers=headers, tablefmt="simple"))
-                menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
             elif show_the_table.lower() == 'continue':
                 menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
             else:
@@ -157,16 +155,18 @@ def calculate_expenses(calculation_needs, calculation_savings, calculation_livin
 
 
 def menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
-
     while True:
-        print("Do you want to continue with adding data? (yes/no):")
+        print("Press '1',if you would like to add more data.")
+        print("Press '2', if you would like to see the table.")
+        print("Press '3', if you would like to Exit the prgogram.")
         question = input("")
         clearScreen()
-        if question.lower() == 'yes':
+        if question.lower() == '1':
             name, needs_value, savings_value, living_value = take_data()
             calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
-            #build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
-        elif question.lower() == 'no':
+            build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
+            break
+        elif question.lower() == '2':
             build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
         else:
             print("Invalid input, please add yes or no values!")
@@ -182,8 +182,8 @@ def main():
     name, needs_value, savings_value, living_value = take_data()
     calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
     build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
-    menu(needs, savings, living, name, needs_value, savings_value, living_value)
-   
+    menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
+    
 
 start()
 main()
