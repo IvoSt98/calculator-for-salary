@@ -50,7 +50,8 @@ def calculate_income(income):
     living = 0.2 * income
     return needs, savings, living
 
-def build_table(needs, savings, living, name, needs_value, savings_value, living_value):
+
+def build_table(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living):
     """ 
     The function, build a table with tabulate.
     Print first the headers. After that the income.
@@ -63,10 +64,10 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
     table = [[f"{name}", f"{needs_value}",f"{savings_value}",f"{living_value}"]]
-    #calculation = [["Calculation:", f"{calculation_savings}",f"{calculation_savings}",f"{calculation_living}"]]
+    calculation = [["Calculation:", f"{calculation_needs}",f"{calculation_savings}",f"{calculation_living}"]]
     data.append(table[0])
     whole_table = info_income + data
-    #whole_table_with_calculation = info_income + data + calculation 
+    whole_table_with_calculation = info_income + data + calculation 
     while True:
         try:
             print()
@@ -77,12 +78,12 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
             show_the_table = input("yes/no/continue:")
             if show_the_table.lower() == 'yes':
                 print(tabulate(whole_table, headers=headers, tablefmt="simple"))
-                menu(needs, savings, living, name, needs_value, savings_value, living_value)
+                menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
             elif show_the_table.lower() == 'no':
-                #print(tabulate(whole_table_with_calculation, headers=headers, tablefmt="simple"))
-                menu(needs, savings, living, name, needs_value, savings_value, living_value)
+                print(tabulate(whole_table_with_calculation, headers=headers, tablefmt="simple"))
+                menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
             elif show_the_table.lower() == 'continue':
-                menu(needs, savings, living, name, needs_value, savings_value, living_value)
+                menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
             else:
                 raise ValueError("Invalid input: Please select one of the options (yes/no).\n")
         except ValueError as e:
@@ -113,14 +114,28 @@ def take_data():
             print("Invalid data, please add only numbers:")
 
     return name, needs_value, savings_value, living_value 
-    
-def menu(needs, savings, living, name, needs_value, savings_value, living_value):
+
+
+def calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value):
+
+    """ The def subtracts right operand from 
+    the left operand and assign the result to left operand.
+    And after that return all left operands.
+    It will be used for def build_table."""
+
+    calculation_needs -= needs_value
+    calculation_savings -= savings_value
+    calculation_living -= living_value
+    return calculation_needs, calculation_savings, calculation_living
+
+def menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living):
 
     while True:
         question = input("Do you want to continue with adding data? (yes/no):\n")
         if  question.lower() == 'yes':
             name, needs_value, savings_value, living_value = take_data()
-            build_table(needs, savings, living, name, needs_value, savings_value, living_value )
+            calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
+            build_table(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living )
         elif question.lower() == 'no':
             break
         else:
@@ -132,11 +147,15 @@ def main():
 
     income = get_income()
     needs, savings, living = calculate_income(income)
+    
+    calculation_needs, calculation_savings, calculation_living =  needs, savings, living
     name, needs_value, savings_value, living_value = take_data()
-    build_table(needs, savings, living, name, needs_value, savings_value, living_value)
+
+    calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
+    build_table(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
     menu(needs, savings, living, name, needs_value, savings_value, living_value)
 
 if __name__ == "__main__":
-    start()
+    #start()
     main()
  
