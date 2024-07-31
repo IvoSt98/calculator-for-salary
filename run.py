@@ -108,12 +108,8 @@ def take_data():
 
     return name, needs_value, savings_value, living_value 
     
-def main():
-    income = get_income()
-    needs, savings, living = calculate_income(income)
-    name, needs_value, savings_value, living_value = take_data()
-    build_table(needs, savings, living, name, needs_value, savings_value, living_value)
-
+def menu(needs, savings, living, name, needs_value, savings_value, living_value):
+    
     while True:
         question = input("Do you want to continue with adding data? (yes/no):\n")
         if  question.lower() == 'yes':
@@ -124,6 +120,16 @@ def main():
         else:
             print("Invalid input, please add yes or no values!")
    
+def main():
+
+    """ Calling all defs """
+
+    income = get_income()
+    needs, savings, living = calculate_income(income)
+    name, needs_value, savings_value, living_value = take_data()
+    build_table(needs, savings, living, name, needs_value, savings_value, living_value)
+    menu(needs, savings, living, name, needs_value, savings_value, living_value)
+
 if __name__ == "__main__":
     start()
     main()
