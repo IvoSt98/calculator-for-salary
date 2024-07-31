@@ -1,4 +1,5 @@
 from tabulate import tabulate
+import os
 
 """Global storage"""
 data = []
@@ -36,6 +37,10 @@ def start():
     print()
     print("Good Luck!\n")
 
+# Code adapted from: https://www.101computing.net/python-typing-text-effect/
+def clearScreen():
+  os.system("clear")
+  
 def get_income():
     """
     The function calculate the sum to be always float, if it's a string it'll be 
@@ -62,6 +67,7 @@ def calculate_income(income):
     savings = 0.4 * income
     living = 0.2 * income
     return needs, savings, living
+    
 
 def build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
     """ 
