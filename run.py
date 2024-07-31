@@ -102,18 +102,8 @@ def take_data():
         try:
             print("If your expense it is not Needs, then add value - 0")
             needs_value = float(input(f"Enter value for Needs: "))
-            break
-        except:
-            print("Invalid data, please add only numbers:")
-    while True:
-        try:
             print("If your expense it is not Savings/Investments, then add value - 0")
             savings_value = float(input(f"Enter new Savings/Investments: "))
-            break
-        except:
-            print("Invalid data, please add only numbers:")
-    while True:
-        try:
             print("If your expense it is not Living Expenses, then add value - 0")
             living_value = float(input(f"Enter new Living Expenses: "))
             break
