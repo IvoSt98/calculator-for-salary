@@ -85,9 +85,7 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     """
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
-    table = [[f"{name}", f"${needs_value}", f"${savings_value}", f"${living_value}"]]
     calculation = [["Calculation:", f"${calculation_needs}", f"${calculation_savings}", f"${calculation_living}"]]
-    DATA.append(table[0])
     whole_table = info_income + DATA
     whole_table_with_calculation = info_income + DATA + calculation 
     while True:
@@ -96,7 +94,7 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
             print()
             print("Write 'yes' to see the table without calculations!")
             print("Write 'no' to see the table with calculations.")
-            print("Write 'continue' to add more data.")
+            print("Write 'continue' to see another options.")
             show_the_table = input("")
             clearScreen()
             if show_the_table.lower() == 'yes':
@@ -167,9 +165,10 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
         if question.lower() == 'yes':
             name, needs_value, savings_value, living_value = take_data()
             calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
-            build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
+            #build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
         elif question.lower() == 'no':
-            break
+            DATA.append([f"{name}", f"${needs_value}", f"${savings_value}", f"${living_value}"])
+            build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
         else:
             print("Invalid input, please add yes or no values!")
    
@@ -185,7 +184,7 @@ def main():
     calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
     build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
     menu(needs, savings, living, name, needs_value, savings_value, living_value)
-
+   
 
 start()
 main()
