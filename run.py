@@ -85,8 +85,6 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     """
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
-    table = [[f"{name}", f"${needs_value}", f"${savings_value}", f"${living_value}"]]
-    DATA.append(table[0])
     calculation = [["Calculation:", f"${calculation_needs}", f"${calculation_savings}", f"${calculation_living}"]]
     whole_table = info_income + DATA
     whole_table_with_calculation = info_income + DATA + calculation 
@@ -163,9 +161,9 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
         clearScreen()
         if question.lower() == '1':
             name, needs_value, savings_value, living_value = take_data()
+            global DATA
+            DATA.append([name, f"${needs_value}", f"${savings_value}", f"${living_value}"])
             calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
-            build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
-            break
         elif question.lower() == '2':
             build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
         else:
@@ -180,6 +178,8 @@ def main():
     needs, savings, living = calculate_income(income)
     calculation_needs, calculation_savings, calculation_living = needs, savings, living
     name, needs_value, savings_value, living_value = take_data()
+    global DATA
+    DATA.append([name, f"${needs_value}", f"${savings_value}", f"${living_value}"])
     calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
     build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
     menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
