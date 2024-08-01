@@ -2,8 +2,20 @@ from tabulate import tabulate
 import os
 import sys
 
+
 """Global const"""
 DATA = []
+
+
+# Code adapted from: https://www.101computing.net/python-typing-text-effect/
+def clearScreen():
+  os.system("clear")
+
+
+#Code adapted from: https://www.freecodecamp.org/news/python-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/#:~:text=The%20exit()%20function%20in,immediately%20stop%20running%20and%20exit.
+def exit_program():
+    print("Exiting the program...")
+    sys.exit(0)
 
 
 def start():
@@ -40,17 +52,6 @@ def start():
     print("Good Luck!\n")
 
 
-# Code adapted from: https://www.101computing.net/python-typing-text-effect/
-def clearScreen():
-  os.system("clear")
-
-
-#Code adapted from: https://www.freecodecamp.org/news/python-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/#:~:text=The%20exit()%20function%20in,immediately%20stop%20running%20and%20exit.
-def exit_program():
-    print("Exiting the program...")
-    sys.exit(0)
-
-
 def get_income():
     """
     The function calculate the sum to be always float, if it's a string it'll be 
@@ -79,40 +80,6 @@ def calculate_income(income):
     savings = 0.4 * income
     living = 0.2 * income
     return needs, savings, living
-    
-
-def build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
-    """ 
-    The function, build a table with tabulate.
-    Print first the headers. After that the income.
-    And save the values for name, needs, savings and living, after that 
-    print it to the table.
-    User choice to choose to see the table without calculation, with 
-    calcultations or to continue with additing data.
-    """
-    headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
-    info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
-    calculation = [["Calculation:", f"${calculation_needs}", f"${calculation_savings}", f"${calculation_living}"]]
-    whole_table = info_income + DATA
-    whole_table_with_calculation = info_income + DATA + calculation 
-    while True:
-        try:
-            print()
-            print("Write 'yes' to see the table without calculations!")
-            print("Write 'no' to see the table with calculations.")
-            print("Write 'continue' to see another options.")
-            show_the_table = input("")
-            clearScreen()
-            if show_the_table.lower() == 'yes':
-                print(tabulate(whole_table, headers=headers, tablefmt="simple"))
-            elif show_the_table.lower() == 'no':
-                print(tabulate(whole_table_with_calculation, headers=headers, tablefmt="simple"))
-            elif show_the_table.lower() == 'continue':
-                menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
-            else:
-                raise ValueError("Invalid input: Please select one of the options (yes/no/continue).\n")
-        except ValueError as e:
-            print(e)
 
 
 def take_data():
@@ -157,6 +124,40 @@ def calculate_expenses(calculation_needs, calculation_savings, calculation_livin
     calculation_savings -= savings_value
     calculation_living -= living_value
     return calculation_needs, calculation_savings, calculation_living
+
+
+def build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
+    """ 
+    The function, build a table with tabulate.
+    Print first the headers. After that the income.
+    And save the values for name, needs, savings and living, after that 
+    print it to the table.
+    User choice to choose to see the table without calculation, with 
+    calcultations or to continue with additing data.
+    """
+    headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
+    info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
+    calculation = [["Calculation:", f"${calculation_needs}", f"${calculation_savings}", f"${calculation_living}"]]
+    whole_table = info_income + DATA
+    whole_table_with_calculation = info_income + DATA + calculation 
+    while True:
+        try:
+            print()
+            print("Write 'yes' to see the table without calculations!")
+            print("Write 'no' to see the table with calculations.")
+            print("Write 'continue' to see another options.")
+            show_the_table = input("")
+            clearScreen()
+            if show_the_table.lower() == 'yes':
+                print(tabulate(whole_table, headers=headers, tablefmt="simple"))
+            elif show_the_table.lower() == 'no':
+                print(tabulate(whole_table_with_calculation, headers=headers, tablefmt="simple"))
+            elif show_the_table.lower() == 'continue':
+                menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
+            else:
+                raise ValueError("Invalid input: Please select one of the options (yes/no/continue).\n")
+        except ValueError as e:
+            print(e)
 
 
 def menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
