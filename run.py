@@ -146,19 +146,19 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
     while True:
         try:
             print()
-            print("Write 'yes' to see the table without calculations!")
-            print("Write 'no' to see the table with calculations.")
-            print("Write 'continue' to see another options.")
+            print("Press '1',to see the table without calculations.")
+            print("Press '2',to see the table with calculations.")
+            print("Press '3',to see another options.")
             show_the_table = input("")
             clearScreen()
-            if show_the_table.lower() == 'yes':
+            if show_the_table == '1':
                 print(tabulate(whole_table, headers=headers, tablefmt="simple"))
-            elif show_the_table.lower() == 'no':
+            elif show_the_table == '2':
                 print(tabulate(whole_table_with_calculation, headers=headers, tablefmt="simple"))
-            elif show_the_table.lower() == 'continue':
+            elif show_the_table == '3':
                 menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
             else:
-                raise ValueError("Invalid input: Please select one of the options (yes/no/continue).\n")
+                raise ValueError("Invalid input: Please select one of the options (1/2/3).\n")
         except ValueError as e:
             print(e)
 
@@ -169,22 +169,23 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
     to navigate between different options.
     """
     while True:
+        print()
         print("Press '1',if you would like to add more data.")
         print("Press '2', if you would like to see the table.")
         print("Press '3', if you would like to Exit the program.")
         question = input("")
         clearScreen()
-        if question.lower() == '1':
+        if question == '1':
             name, needs_value, savings_value, living_value = take_data()
             global DATA
             DATA.append([name, f"${needs_value}", f"${savings_value}", f"${living_value}"])
             calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
-        elif question.lower() == '2':
+        elif question == '2':
             build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
-        elif question.lower() == '3':
+        elif question == '3':
              exit_program()
         else:
-            print("Invalid input, please add yes or no values!")
+            print("Invalid input: Please select one of the options (1/2/3).\n")
    
 
 def main():
@@ -200,7 +201,7 @@ def main():
     calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
     menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
     
-    
+
 start()
 main()
  
