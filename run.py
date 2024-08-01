@@ -198,10 +198,9 @@ def main():
     global DATA
     DATA.append([name, f"${needs_value}", f"${savings_value}", f"${living_value}"])
     calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
-    build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
     menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
     
-
+    
 start()
 main()
  
