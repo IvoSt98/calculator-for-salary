@@ -73,7 +73,7 @@ def get_income():
 
 def calculate_income(income):
     """ 
-    The def calculate the month income in % for needs, savings
+    The def calculate the income in % for needs, savings
     and living
     """
     needs = 0.4 * income
@@ -85,7 +85,8 @@ def calculate_income(income):
 def take_data():
     """
     The function take data from the user.
-    Check the inputs if it's validate.
+    Check the inputs if it's validate,
+    and pass the data to the paaramethers.
     """
     while True:
         print("Please provide name for the data which you will add...")
@@ -119,7 +120,8 @@ def calculate_expenses(calculation_needs, calculation_savings, calculation_livin
     """ The def subtracts right operand from 
     the left operand and assign the result to left operand.
     And after that return all left operands.
-    It will be used for def build_table."""
+    It will be in use to calculate the end result.
+    """
     calculation_needs -= needs_value
     calculation_savings -= savings_value
     calculation_living -= living_value
@@ -128,12 +130,13 @@ def calculate_expenses(calculation_needs, calculation_savings, calculation_livin
 
 def build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
     """ 
-    The function, build a table with tabulate.
-    Print first the headers. After that the income.
-    And save the values for name, needs, savings and living, after that 
-    print it to the table.
-    User choice to choose to see the table without calculation, with 
-    calcultations or to continue with additing data.
+    The function, build a table.
+    Give an options to navigate between
+    user to see the table with or 
+    without calculations, or
+    to continue to continue to 
+    another function which will 
+    provide different options.
     """
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
@@ -161,6 +164,10 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
 
 
 def menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
+    """
+    Giving options to the user 
+    to navigate between different options.
+    """
     while True:
         print("Press '1',if you would like to add more data.")
         print("Press '2', if you would like to see the table.")
@@ -182,7 +189,7 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
 
 def main():
     """ 
-    Calling all defs 
+    Run all program functions 
     """
     income = get_income()
     needs, savings, living = calculate_income(income)
