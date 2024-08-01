@@ -1,5 +1,6 @@
 from tabulate import tabulate
 import os
+import sys
 
 """Global const"""
 DATA = []
@@ -42,7 +43,13 @@ def start():
 # Code adapted from: https://www.101computing.net/python-typing-text-effect/
 def clearScreen():
   os.system("clear")
-  
+
+
+#Code adapted from: https://www.freecodecamp.org/news/python-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/#:~:text=The%20exit()%20function%20in,immediately%20stop%20running%20and%20exit.
+def exit_program():
+    print("Exiting the program...")
+    sys.exit(0)
+
 
 def get_income():
     """
@@ -156,7 +163,7 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
     while True:
         print("Press '1',if you would like to add more data.")
         print("Press '2', if you would like to see the table.")
-        print("Press '3', if you would like to Exit the prgogram.")
+        print("Press '3', if you would like to Exit the program.")
         question = input("")
         clearScreen()
         if question.lower() == '1':
@@ -166,6 +173,8 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
             calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
         elif question.lower() == '2':
             build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
+        elif question.lower() == '3':
+             exit_program()
         else:
             print("Invalid input, please add yes or no values!")
    
