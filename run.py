@@ -29,8 +29,8 @@ def start():
     print(Fore.CYAN + "                               "
           "The 40/40/20 System:")
     print()
-    print(Fore.RED + "First, enter your income for a month ")
-    print(Fore.RED + "which will be divided as follows:\n")
+    print(Fore.GREEN + "First, enter your income for a month ")
+    print(Fore.GREEN + "which will be divided as follows:\n")
     print("     "
           "NEEDS - 40 percentages ")
     print("     "
@@ -38,7 +38,7 @@ def start():
     print("     "
           "LIVING EXPENSES - 20 percentages")
     print()
-    print(Fore.RED + "Example for NEEDS:\n")
+    print(Fore.GREEN + "Example for NEEDS:\n")
     print("     "
           "This is your insuarance for the")
     print("     "
@@ -46,7 +46,7 @@ def start():
     print("     "
           "The things without you can't live.")
     print()
-    print(Fore.RED + "Example for SAVINGS/INVESTMENTS:\n")
+    print(Fore.GREEN + "Example for SAVINGS/INVESTMENTS:\n")
     print("     "
           "This is where you will write the money for")
     print("     "
@@ -54,7 +54,7 @@ def start():
     print("     "
           "Some place where you want to invest.")
     print()
-    print(Fore.RED + "Example for LIVING EXPENSES:")
+    print(Fore.GREEN + "Example for LIVING EXPENSES:\n")
     print("     "
           "Here you need to fill your money for")
     print("     "
@@ -65,7 +65,7 @@ def start():
     print(Fore.YELLOW + "                   "
           "If the information you want to add doesn't apply"
           "                                       "
-          "to any of the columns, just add 0\n")
+          "to any of the columns, just add 0.\n")
 
 
 def get_income():
@@ -228,5 +228,5 @@ def main():
     
 
 if __name__ == '__main__':
-    start()
+    #start()
     main()
