@@ -77,22 +77,24 @@ def start():
 
 def get_income():
     """
-    The function calculate the sum to be always float, if it's a string it'll be 
-    displayed error, if it's less then 4 digits it will print again error message
+    The function calculate the sum to be always float,
+     if it's a string it'll be
+    displayed error, if it's less then 4 digits
+    it will print again error message.
     """
-    while True: 
+    while True:
         try:
             print("     "
-                "First enter your income (at least 4 digits):")
+                  "First enter your income (at least 4 digits):")
             user_income = input("")
             income = float(user_income)
             clearScreen()
-            if income >= 1000:  
+            if income >= 1000:
                 return income
             else:
                 print("Income must be at least 4 digits. Please try again.")
         except ValueError:
-            print("Invalid data. Please enter a number with at least 4 digits.")
+            print("Invalid data. Please povide data with at least 4 digits.")
 
 
 def calculate_income(income):
