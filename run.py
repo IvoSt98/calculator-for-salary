@@ -274,8 +274,10 @@ def menu(
             global DATA
             DATA.append([name, f"${needs_value}",
                         f"${savings_value}", f"${living_value}"])
-            calculation_needs, calculation_savings,
-            calculation_living = calculate_expenses(calculation_needs,
+            calculation_needs,\
+            calculation_savings,\
+            calculation_living = calculate_expenses(
+                                                    calculation_needs,
                                                     calculation_savings,
                                                     calculation_living,
                                                     needs_value,
@@ -283,9 +285,9 @@ def menu(
                                                     living_value)
         elif question == '2':
             build_table(needs, savings, living, name,
-                        needs_value, savings_value,
-                        living_value, calculation_needs,
-                        calculation_savings, calculation_living)
+                        needs_value, savings_value, living_value,
+                        calculation_needs, calculation_savings, calculation_living
+                        )
         elif question == '3':
             exit_program()
         else:
@@ -298,18 +300,21 @@ def main():
     """
     income = get_income()
     needs, savings, living = calculate_income(income)
-    calculation_needs, calculation_savings,
-    calculation_living = needs, savings, living
+    calculation_needs, calculation_savings, \
+        calculation_living = needs, savings, living
     name, needs_value, savings_value, living_value = take_data()
     global DATA
     DATA.append([name, f"${needs_value}",
                 f"${savings_value}", f"${living_value}"])
-    calculation_needs, calculation_savings,
-    calculation_living = calculate_expenses(calculation_needs,
-                                            calculation_savings,
-                                            calculation_living,
-                                            needs_value, savings_value,
-                                            living_value)
+    calculation_needs,\
+        calculation_savings,\
+        calculation_living = calculate_expenses(
+                                                calculation_needs,
+                                                calculation_savings,
+                                                calculation_living,
+                                                needs_value,
+                                                savings_value,
+                                                living_value)
     menu(needs, savings, living, name, needs_value,
          savings_value, living_value, calculation_needs,
          calculation_savings, calculation_living)
