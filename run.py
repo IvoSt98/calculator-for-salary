@@ -60,7 +60,7 @@ def get_income():
     while True: 
         try:
             print("Enter your income (at least 4 digits):")
-            user_income = input("...\n")
+            user_income = input("\n")
             income = float(user_income)
             clearScreen()
             if income >= 1000:  
@@ -90,7 +90,7 @@ def take_data():
     """
     while True:
         print("Please provide name for the data which you will add...")
-        name = input("...\n")
+        name = input("\n")
         clearScreen()
         if name.isalpha():
             break
@@ -100,20 +100,20 @@ def take_data():
         try:
             print("If your expense it is not Needs, then add value - 0")
             print("Enter value for Needs:")
-            needs_value = float(input("...\n"))
+            needs_value = float(input("\n"))
             if needs_value < 0:
                 raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
             clearScreen()
             print("If your expense it is not Savings/Investments, then add value - 0")
             print("Enter new Savings/Investments:")
-            savings_value = float(input("...\n"))
+            savings_value = float(input("\n"))
             if savings_value < 0:
                 raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
             print("If your expense it is not Living Expenses, then add value - 0")
             print("Enter new Living Expenses:")
-            living_value = float(input("...\n"))
+            living_value = float(input("\n"))
             if living_value < 0:
                 raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
@@ -158,7 +158,7 @@ def build_table(needs, savings, living, name, needs_value, savings_value, living
             print("Press '1',to see the table without calculations.")
             print("Press '2',to see the table with calculations.")
             print("Press '3',to see another options.")
-            show_the_table = input("...\n")
+            show_the_table = input("\n")
             clearScreen()
             if show_the_table == '1':
                 print(tabulate(whole_table, headers=headers, tablefmt="simple"))
@@ -182,7 +182,7 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
         print("Press '1',if you would like to add more data.")
         print("Press '2', if you would like to see the table.")
         print("Press '3', if you would like to Exit the program.")
-        question = input("...\n")
+        question = input("\n")
         clearScreen()
         if question == '1':
             name, needs_value, savings_value, living_value = take_data()
