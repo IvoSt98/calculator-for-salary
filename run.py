@@ -63,8 +63,8 @@ def start():
           "Something without you can survive.")
     print()
     print(Fore.YELLOW + "                   "
-          "If the information you want to add doesn't apply"
-          "                                       "
+          "If the information you want to add doesn't apply")
+    print(Fore.YELLOW + "                         "
           "to any of the columns, just add 0.\n")
 
 
@@ -105,6 +105,8 @@ def take_data():
     and pass the data to the paaramethers.
     """
     while True:
+        print(Fore.CYAN + "                       "
+              "Your Expenses!")
         print("Please provide name for the data which you will add...")
         name = input("")
         clearScreen()
@@ -114,19 +116,24 @@ def take_data():
             print("Invalid data, please add only letters!")
     while True:
         try:
+            print(Fore.CYAN + "                       "
+              "Your Expenses!")
             print("If your expense it is not Needs, then add value - 0")
             print("Enter value for Needs:")
             needs_value = float(input(""))
             if needs_value < 0:
                 raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
-            clearScreen()
+            print(Fore.CYAN + "                       "
+              "Your Expenses!")
             print("If your expense it is not Savings/Investments, then add value - 0")
             print("Enter new Savings/Investments:")
             savings_value = float(input(""))
             if savings_value < 0:
                 raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
+            print(Fore.CYAN + "                       "
+              "Your Expenses!")
             print("If your expense it is not Living Expenses, then add value - 0")
             print("Enter new Living Expenses:")
             living_value = float(input(""))
