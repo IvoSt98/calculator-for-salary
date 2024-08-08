@@ -20,6 +20,8 @@ Code adapted from: https://www.freecodecamp.org/news/python
 ~:text=The%20exit()%20function%20in,immediately%20stop%20runnin
 g%20and%20exit.
 """
+
+
 def exit_program():
     print("Exiting the program...")
     sys.exit(0)
