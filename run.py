@@ -227,11 +227,11 @@ def build_table(
             if show_the_table == '1':
                 print()
                 print(Fore.YELLOW + tabulate(whole_table,
-                      headers=headers, tablefmt="simple"))
+                      headers=headers, tablefmt="mixed_outline"))
             elif show_the_table == '2':
                 print()
                 print(Fore.YELLOW + tabulate(whole_table_with_calculation,
-                      headers=headers, tablefmt="simple"))
+                      headers=headers, tablefmt="mixed_outline"))
             elif show_the_table == '3':
                 menu(needs, savings, living, name,
                      needs_value, savings_value, living_value,
