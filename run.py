@@ -24,34 +24,48 @@ def start():
     """
     The function expalin how the program it's working and for what it is.
     """
-    print("Welcome to Your Salary/Income Calculator!")
-    print("The 40/40/20 System:")
+    print(Fore.CYAN + "                       "
+          "Welcome to Your Salary/Income Calculator!")
+    print(Fore.CYAN + "                               "
+          "The 40/40/20 System:")
     print()
-    print("First, enter your income for a month ")
-    print("which will be divided as follows:")
-    print("-40 percentages - needs ")
-    print("-40 percentages - savings/investments")
-    print("-20 percentages - living expenses.")
+    print(Fore.RED + "First, enter your income for a month ")
+    print(Fore.RED + "which will be divided as follows:\n")
+    print("     "
+          "NEEDS - 40 percentages ")
+    print("     "
+          "SAVINGS/INVESTMENTS - 40 percentages")
+    print("     "
+          "LIVING EXPENSES - 20 percentages")
     print()
-    print("Example for NEEDS:")
-    print("This is your insuarance for the car,")
-    print("bills, credits, food and etc.")
-    print("The things without you can't live.")
+    print(Fore.RED + "Example for NEEDS:\n")
+    print("     "
+          "This is your insuarance for the")
+    print("     "
+          "car, bills, credits, food and etc.")
+    print("     "
+          "The things without you can't live.")
     print()
-    print("-Example for SAVINGS/INVESTMENTS:")
-    print("this is where you will write the money for")
-    print("education, your holiday, investments in stocks and etc.")
-    print("Some place where you want to invest.")
+    print(Fore.RED + "Example for SAVINGS/INVESTMENTS:\n")
+    print("     "
+          "This is where you will write the money for")
+    print("     "
+          "education, your holiday, investments in stocks and etc.")
+    print("     "
+          "Some place where you want to invest.")
     print()
-    print("-Example for LIVING EXPENSES:")
-    print("here you need to fill your money for")
-    print("cigaretes, parties, restaurants and etc.")
-    print("Something without you can survive.")
+    print(Fore.RED + "Example for LIVING EXPENSES:")
+    print("     "
+          "Here you need to fill your money for")
+    print("     "
+          "cigaretes, parties, restaurants and etc.")
+    print("     "
+          "Something without you can survive.")
     print()
-    print("If the information you want to add doesn't apply")
-    print("to any of the columns, just add 0")
-    print()
-    print("Good Luck!\n")
+    print(Fore.YELLOW + "                   "
+          "If the information you want to add doesn't apply"
+          "                                       "
+          "to any of the columns, just add 0\n")
 
 
 def get_income():
@@ -61,7 +75,7 @@ def get_income():
     """
     while True: 
         try:
-            print("Enter your income (at least 4 digits):")
+            print("First enter your income (at least 4 digits):")
             user_income = input("")
             income = float(user_income)
             clearScreen()
