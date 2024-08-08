@@ -12,7 +12,7 @@ def clearScreen():
   os.system("clear")
 
 
-#Code adapted from: https://www.freecodecamp.org/news/python-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/#:~:text=The%20exit()%20function%20in,immediately%20stop%20running%20and%20exit.
+# Code adapted from: https://www.freecodecamp.org/news/python-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/#:~:text=The%20exit()%20function%20in,immediately%20stop%20running%20and%20exit.
 def exit_program():
     print("Exiting the program...")
     sys.exit(0)
@@ -101,18 +101,27 @@ def take_data():
             print("If your expense it is not Needs, then add value - 0")
             print("Enter value for Needs:")
             needs_value = float(input(""))
+            if needs_value < 0:
+                raise ValueError("Invalid user data, please add only positive numbers.")
+            clearScreen()
             clearScreen()
             print("If your expense it is not Savings/Investments, then add value - 0")
             print("Enter new Savings/Investments:")
             savings_value = float(input(""))
+            if savings_value < 0:
+                raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
             print("If your expense it is not Living Expenses, then add value - 0")
             print("Enter new Living Expenses:")
             living_value = float(input(""))
+            if living_value < 0:
+                raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
             break
+        except ValueError as e:
+            print(e)
         except Exception:
-            print("Invalid data, please add only numbers:")
+            print('Another error has occurred')
     return name, needs_value, savings_value, living_value 
 
 
@@ -202,6 +211,6 @@ def main():
     menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
     
 
-start()
-main()
- 
+if __name__ == '__main__':
+    start()
+    main()
