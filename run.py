@@ -1,7 +1,9 @@
 from tabulate import tabulate
 import os
 import sys
-
+import colorama
+from colorama import Back, Fore, Style, init
+init(autoreset=True)
 
 """Global const"""
 DATA = []
