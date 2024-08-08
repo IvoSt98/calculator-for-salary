@@ -275,8 +275,8 @@ def menu(
             DATA.append([name, f"${needs_value}",
                         f"${savings_value}", f"${living_value}"])
             calculation_needs,\
-            calculation_savings,\
-            calculation_living = calculate_expenses(
+                calculation_savings,\
+                calculation_living = calculate_expenses(
                                                     calculation_needs,
                                                     calculation_savings,
                                                     calculation_living,
@@ -286,8 +286,8 @@ def menu(
         elif question == '2':
             build_table(needs, savings, living, name,
                         needs_value, savings_value, living_value,
-                        calculation_needs, calculation_savings, calculation_living
-                        )
+                        calculation_needs, calculation_savings,
+                        calculation_living)
         elif question == '3':
             exit_program()
         else:
