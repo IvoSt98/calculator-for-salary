@@ -222,13 +222,16 @@ def build_table(
                   "2. To see the table with calculations.")
             print("     "
                   "3. To go back.")
+            
             show_the_table = input("")
             clearScreen()
             if show_the_table == '1':
-                print(tabulate(whole_table,
+                print()
+                print(Fore.MAGENTA + tabulate(whole_table,
                       headers=headers, tablefmt="simple"))
             elif show_the_table == '2':
-                print(tabulate(whole_table_with_calculation,
+                print()
+                print(Fore.MAGENTA + tabulate(whole_table_with_calculation,
                       headers=headers, tablefmt="simple"))
             elif show_the_table == '3':
                 menu(needs, savings, living, name,
