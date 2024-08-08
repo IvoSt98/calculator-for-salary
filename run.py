@@ -241,16 +241,29 @@ def build_table(
             print(e)
 
 
-def menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
+def menu(
+    needs, savings, living,
+    name, needs_value, savings_value,
+    living_value, calculation_needs,
+    calculation_savings, calculation_living
+):
     """
-    Giving options to the user 
+    Giving options to the user
     to navigate between different options.
     """
     while True:
         print()
-        print("Press '1',if you would like to add more data.")
-        print("Press '2', if you would like to see the table.")
-        print("Press '3', if you would like to Exit the program.")
+        print(Fore.CYAN + "                       "
+              "Your Table Menu!\n")
+        print("            "
+              "Choose one of the following options:")
+        print()
+        print("     "
+              "1. To add more data.")
+        print("     "
+              "2. To see the table.")
+        print("     "
+              "3. To Exit the program.")
         question = input("")
         clearScreen()
         if question == '1':
@@ -263,7 +276,7 @@ def menu(needs, savings, living, name, needs_value, savings_value, living_value,
         elif question == '3':
              exit_program()
         else:
-            print("Invalid input: Please select one of the options (1/2/3).\n")
+            print("Please select one of the options (1/2/3).\n")
    
 
 def main():
