@@ -78,7 +78,7 @@ def start():
 def get_income():
     """
     The function calculate the sum to be always float,
-     if it's a string it'll be
+    if it's a string it'll be
     displayed error, if it's less then 4 digits
     it will print again error message.
     """
@@ -98,7 +98,7 @@ def get_income():
 
 
 def calculate_income(income):
-    """ 
+    """
     The def calculate the income in % for needs, savings
     and living
     """
