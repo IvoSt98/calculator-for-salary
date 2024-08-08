@@ -119,50 +119,57 @@ def take_data():
         print(Fore.CYAN + "                       "
               "Your Name for Expenses!\n")
         print("     "
-            "Your name should to be only alphabetic signs!\n")
-        print("Please provide name for the data which you will add!")
+              "The name must to be only alphabetical signs without any space!\n")
+        print("Enter value for Name:")
         name = input("")
         clearScreen()
         if name.isalpha():
             break
         else:
-            print("Invalid data, please add only letters!")
+            print("Invalid data, please add only letters")
+            print("without any white space or spacial signs!")
+            print("")
+            print("Example for data which will be approved:")
+            print("food, Party, CarPayment")
+            print("")
+            print("Example for data which will be not approved:")
+            print("Car Payment, sam.pary, Sport-card")
     while True:
         try:
             print("")
             print(Fore.CYAN + "                       "
-              "Your Data for Needs!\n")
+                  "Your Data for Needs!\n")
             print("     "
-                "If your expense it is not Needs, then add value - 0\n")
+                  "If your expense it is not Needs, then add - 0\n")
             print("Enter value for Needs:")
             needs_value = float(input(""))
             if needs_value < 0:
-                raise ValueError("Invalid user data, please add only positive numbers.")
+                raise ValueError("Please add only positive numbers.")
             clearScreen()
             print("")
             print(Fore.CYAN + "                       "
-              "Your Data for Savings/Investments!\n")
+                  "Your Data for Savings/Inv.!\n")
             print("     "
-                "If your expense it is not Savings/Investments, then add value - 0\n")
+                  "If your expense it is not Savings/Inv., then add - 0\n")
             print("Enter new Savings/Investments:")
             savings_value = float(input(""))
             if savings_value < 0:
-                raise ValueError("Invalid user data, please add only positive numbers.")
+                raise ValueError("Please add only positive numbers.")
             clearScreen()
             print("")
             print(Fore.CYAN + "                       "
-              "Your Your Data for Living Expenses!\n")
+                  "Your Your Data for Living Expenses!\n")
             print("     "
-                "If your expense it is not Living Expenses, then add value - 0\n")
+                  "If your expense it is not Living Expenses, then add - 0\n")
             print("Enter new Living Expenses:")
             living_value = float(input(""))
             if living_value < 0:
-                raise ValueError("Invalid user data, please add only positive numbers.")
+                raise ValueError("Please add only positive numbers.")
             clearScreen()
             break
         except ValueError as e:
             print(e)
-    return name, needs_value, savings_value, living_value 
+    return name, needs_value, savings_value, living_value
 
 
 def calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value):
@@ -253,4 +260,4 @@ def main():
 
 if __name__ == '__main__':
     start()
-    #main()
+    main()
