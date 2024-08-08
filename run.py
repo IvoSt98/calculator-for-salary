@@ -172,8 +172,12 @@ def take_data():
     return name, needs_value, savings_value, living_value
 
 
-def calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value):
-    """ The def subtracts right operand from 
+def calculate_expenses(
+    calculation_needs, calculation_savings, calculation_living,
+    needs_value, savings_value, living_value
+):
+    """
+    The def subtracts right operand from
     the left operand and assign the result to left operand.
     And after that return all left operands.
     It will be in use to calculate the end result.
