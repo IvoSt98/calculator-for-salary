@@ -188,37 +188,55 @@ def calculate_expenses(
     return calculation_needs, calculation_savings, calculation_living
 
 
-def build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living):
-    """ 
+def build_table(
+    needs, savings, living, name,
+    needs_value, savings_value, living_value, calculation_needs,
+    calculation_savings, calculation_living
+):
+    """
     The function, build a table.
     Give an options to navigate between
-    user to see the table with or 
+    user to see the table with or
     without calculations, or
-    to continue to continue to 
-    another function which will 
+    to continue to continue to
+    another function which will
     provide different options.
     """
     headers = ["Name", "Needs", "Savings/Investments", "Living Expenses"]
     info_income = [["Income", f"${needs}", f"${savings}", f"${living}"]]
-    calculation = [["Calculation:", f"${calculation_needs}", f"${calculation_savings}", f"${calculation_living}"]]
+    calculation = [["Calculation:", f"${calculation_needs}",
+                    f"${calculation_savings}", f"${calculation_living}"]]
     whole_table = info_income + DATA
-    whole_table_with_calculation = info_income + DATA + calculation 
+    whole_table_with_calculation = info_income + DATA + calculation
     while True:
         try:
             print()
-            print("Press '1',to see the table without calculations.")
-            print("Press '2',to see the table with calculations.")
-            print("Press '3',to see another options.")
+            print(Fore.CYAN + "                       "
+                  "Your Table Menu!\n")
+            print("            "
+                  "Choose one of the following options:")
+            print()
+            print("     "
+                  "1. To see the table without calculations.")
+            print("     "
+                  "2. To see the table with calculations.")
+            print("     "
+                  "3. To go back.")
             show_the_table = input("")
             clearScreen()
             if show_the_table == '1':
-                print(tabulate(whole_table, headers=headers, tablefmt="simple"))
+                print(tabulate(whole_table,
+                      headers=headers, tablefmt="simple"))
             elif show_the_table == '2':
-                print(tabulate(whole_table_with_calculation, headers=headers, tablefmt="simple"))
+                print(tabulate(whole_table_with_calculation,
+                      headers=headers, tablefmt="simple"))
             elif show_the_table == '3':
-                menu(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
+                menu(needs, savings, living, name,
+                     needs_value, savings_value, living_value,
+                     calculation_needs, calculation_savings,
+                     calculation_living)
             else:
-                raise ValueError("Invalid input: Please select one of the options (1/2/3).\n")
+                raise ValueError("Please select one of the options (1/2/3).\n")
         except ValueError as e:
             print(e)
 
