@@ -24,7 +24,7 @@ def start():
     """
     The function expalin how the program it's working and for what it is.
     """
-    print(Fore.CYAN + "                       "
+    print(Fore.CYAN + "                       " 
           "Welcome to Your Salary/Income Calculator!")
     print(Fore.CYAN + "                               "
           "The 40/40/20 System:")
@@ -32,7 +32,7 @@ def start():
     print(Fore.GREEN + "First, enter your income for a month ")
     print(Fore.GREEN + "which will be divided as follows:\n")
     print("     "
-          "NEEDS - 40 percentages ")
+         "NEEDS - 40 percentages ")
     print("     "
           "SAVINGS/INVESTMENTS - 40 percentages")
     print("     "
@@ -244,4 +244,4 @@ def main():
 
 if __name__ == '__main__':
     start()
-    main()
+    #main()
