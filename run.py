@@ -127,7 +127,7 @@ def take_data():
                 "If your expense it is not Needs, then add value - 0\n")
             print("Enter value for Needs:")
             needs_value = float(input(""))
-            if needs_value <= 0:
+            if needs_value < 0:
                 raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
             print("")
@@ -137,7 +137,7 @@ def take_data():
                 "If your expense it is not Savings/Investments, then add value - 0\n")
             print("Enter new Savings/Investments:")
             savings_value = float(input(""))
-            if savings_value <= 0:
+            if savings_value < 0:
                 raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
             print("")
@@ -147,7 +147,7 @@ def take_data():
                 "If your expense it is not Living Expenses, then add value - 0\n")
             print("Enter new Living Expenses:")
             living_value = float(input(""))
-            if living_value <= 0:
+            if living_value < 0:
                 raise ValueError("Invalid user data, please add only positive numbers.")
             clearScreen()
             break
