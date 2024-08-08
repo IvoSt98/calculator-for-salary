@@ -11,10 +11,15 @@ DATA = []
 
 # Code adapted from: https://www.101computing.net/python-typing-text-effect/
 def clearScreen():
-  os.system("clear")
+    os.system("clear")
 
 
-# Code adapted from: https://www.freecodecamp.org/news/python-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/#:~:text=The%20exit()%20function%20in,immediately%20stop%20running%20and%20exit.
+"""
+Code adapted from: https://www.freecodecamp.org/news/python
+-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/#:
+~:text=The%20exit()%20function%20in,immediately%20stop%20runnin
+g%20and%20exit.
+"""
 def exit_program():
     print("Exiting the program...")
     sys.exit(0)
@@ -24,7 +29,7 @@ def start():
     """
     The function expalin how the program it's working and for what it is.
     """
-    print(Fore.CYAN + "                       " 
+    print(Fore.CYAN + "                       "
           "Welcome to Your Salary/Income Calculator!")
     print(Fore.CYAN + "                               "
           "The 40/40/20 System:")
@@ -32,7 +37,7 @@ def start():
     print(Fore.GREEN + "First, enter your income for a month ")
     print(Fore.GREEN + "which will be divided as follows:\n")
     print("     "
-         "NEEDS - 40 percentages ")
+          "NEEDS - 40 percentages ")
     print("     "
           "SAVINGS/INVESTMENTS - 40 percentages")
     print("     "
