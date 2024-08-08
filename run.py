@@ -119,7 +119,8 @@ def take_data():
         print(Fore.CYAN + "                       "
               "Your Name for Expenses!\n")
         print("     "
-              "The name must to be only alphabetical signs without any space!\n")
+              "The name must to be only alphabetical signs"
+              "without any space!\n")
         print("Enter value for Name:")
         name = input("")
         clearScreen()
@@ -271,29 +272,48 @@ def menu(
         if question == '1':
             name, needs_value, savings_value, living_value = take_data()
             global DATA
-            DATA.append([name, f"${needs_value}", f"${savings_value}", f"${living_value}"])
-            calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
+            DATA.append([name, f"${needs_value}",
+                        f"${savings_value}", f"${living_value}"])
+            calculation_needs, calculation_savings,
+            calculation_living = calculate_expenses(calculation_needs,
+                                                    calculation_savings,
+                                                    calculation_living,
+                                                    needs_value,
+                                                    savings_value,
+                                                    living_value)
         elif question == '2':
-            build_table(needs, savings, living, name, needs_value, savings_value, living_value, calculation_needs, calculation_savings, calculation_living)
+            build_table(needs, savings, living, name,
+                        needs_value, savings_value,
+                        living_value, calculation_needs,
+                        calculation_savings, calculation_living)
         elif question == '3':
-             exit_program()
+            exit_program()
         else:
             print("Please select one of the options (1/2/3).\n")
-   
+
 
 def main():
-    """ 
-    Run all program functions 
+    """
+    Run all program functions
     """
     income = get_income()
     needs, savings, living = calculate_income(income)
-    calculation_needs, calculation_savings, calculation_living = needs, savings, living
+    calculation_needs, calculation_savings,
+    calculation_living = needs, savings, living
     name, needs_value, savings_value, living_value = take_data()
     global DATA
-    DATA.append([name, f"${needs_value}", f"${savings_value}", f"${living_value}"])
-    calculation_needs, calculation_savings, calculation_living = calculate_expenses(calculation_needs, calculation_savings, calculation_living, needs_value, savings_value, living_value)
-    menu(needs, savings, living, name, needs_value, savings_value, living_value,calculation_needs, calculation_savings, calculation_living)
-    
+    DATA.append([name, f"${needs_value}",
+                f"${savings_value}", f"${living_value}"])
+    calculation_needs, calculation_savings,
+    calculation_living = calculate_expenses(calculation_needs,
+                                            calculation_savings,
+                                            calculation_living,
+                                            needs_value, savings_value,
+                                            living_value)
+    menu(needs, savings, living, name, needs_value,
+         savings_value, living_value, calculation_needs,
+         calculation_savings, calculation_living)
+
 
 if __name__ == '__main__':
     start()
