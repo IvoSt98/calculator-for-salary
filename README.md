@@ -18,6 +18,8 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
    + [Further Testing](#further-testing)
    + [Feature Testing](#feature-testing)
 * [Deployment](#deployment)
+   + [Before the deployment of the project](#before-the-deployment-of-the-project)
+   + [Deployed in Heroku](#deployed-in-heroku)
 * [Credits](#credits)
    + [Content](#content)
 
@@ -34,5 +36,44 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 ### Further Testing
 ### Feature Testing
 ## Deployment
+
+### Before the deployment of the project:
++ With the command `git add.`, all at the command line prompt in your local project directory to add the files or changes to the repository.
++ After, the command `git commit -m` permanently stores the contents of the index in the local repository.
++ In the end, `git push` is used - to upload local repository content to a remote repository.
+
+### Deployed in [Heroku](https://id.heroku.com/login)
+1. Updating the `requirements.txt`
++ Run the following command in the terminal: `pip3 freeze > requirements.txt`
++ The update isn't complete until you add, commit, and push the changes to GitHub (keep this in mind).
+
+2. Creating an account in [Heroku](https://id.heroku.com/login).
++ From the Heroku dashbord click on `Create new app`.
++ Enter a name and select a region for the project deployment, then click `Create App`.
+
+3. Navigate to `Settings`tab.
++ In the `Config Vars` add the following information:
+
+      KEY = 'PORT', VALUE = '8000'
++ Then, click the `Add` button.
+
+4. Updating `Buildpacks` in `Settings`:
++ Click `Add Buildpacks`.
++ Select `Python` and then click `Save Changes`.
++ Click `Add Buildpacks` again to add another Buildpacks.
++ Select `nodejs` and click `Save Changes`.
+
+5. Going to the `Deploy` section.
++ Choose `GitHub` as the `Deployment method`.
++ Confirm the connection to `GitHub`.
++ Search for the project by the name our template and click the button `Connect`.
++ Select either `Automatic Deploys` or `Manual Deploys` and click `Deploy Branch`.
+
+6. Once deployment has been completed, click `View` to view the deployed project.
+
 ## Credits
-### Credits
+### Content
+
++ The code for the function to clean the screen was adapted from [101computing.net](https://www.101computing.net/python-typing-text-effect/).
++ The code for the function to end the program was adapted from [freecodecamp.org]( https://www.freecodecamp.org/newspython-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/#:~:text=The%20exit()%20function%20in,immediately%20stop%20running%20and%20exit.).
++ How to line break in Python was adapted from [datacamp.com](https://www.datacamp.com/tutorial/how-to-line-break-in-python).
