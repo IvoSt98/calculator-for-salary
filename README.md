@@ -33,12 +33,28 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 
 ## Testing
 ### Code Validation
-+ The code was tested with [CI Python Linter](https://pep8ci.herokuapp.com/#).No errors were found in its final testing.
+
+1. The code was tested with [CI Python Linter](https://pep8ci.herokuapp.com/#).No errors were found in its final testing.
 
 ![Pep8ci Validation](readme-images/pep8ci-validation.png)
 
 ### Bugs
 ### Further Testing
+
+1. Browsers and devices testing:
+
+Browser | Outcome | Pass/Fail
+--- | --- | ---
+Google Chrome | No issues. | Pass
+Safari | The program starts but no user input is recognized and the program can't continue. | Fail
+MacBook Air M1" | No issues with appearance or functionality. | Pass
+
+2. Feedback from friends and family members was sought to identify any bugs or user experience issues.
+
+3. Lighthouse testing on desktop screen:
+
+![Lighthouse Testing](readme-images/lighthouse.png)
+
 ### Feature Testing
 ## Deployment
 
