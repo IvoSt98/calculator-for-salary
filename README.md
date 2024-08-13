@@ -10,7 +10,7 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 * [User Stories](#user-stories)
 * [Features](#features)
 * [Future Features](#future-features)
-* [Wireframes](#wireframes)
+* [Flowchart](#flowchart)
 * [Technology Used](#technology-used)
    + [Languages Used](#languages-used)
    + [Libraries and Programs Used](#libraries-and-programs-used)
@@ -39,7 +39,10 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 
 ## Features
 ## Future Features
-## Wireframes
+## Flowchart
+
+[Lucidchart](https://www.lucidchart.com/pages/?) was used during the planning phase to create flowchart, aiding in the visualization of the project's structure and flow.
+![Flow Chart](readme-images/flow-chart.png)
 
 ## Technology Used
 ### Languages Used
@@ -48,7 +51,7 @@ The application has been created with [Python](https://en.wikipedia.org/wiki/Pyt
 
 ### Libraries and Programs Used
 
-+ [Lucidchart](https://www.lucidchart.com/pages/?): Used during the planning phase to create flowcharts, aiding in the visualization of the project's structure and flow.
++ [Lucidchart](https://www.lucidchart.com/pages/?): Used during the planning phase to create flowchart, aiding in the visualization of the project's structure and flow.
 + [GitHub](https://github.com/): Used for version control and as a repository to store the project, ensuring code integrity and collaboration.
 + [GitPod](https://www.gitpod.io/): Served as the primary environment for writing code, committing changes, and pushing updates to GitHub, facilitating seamless development.
 + [Heroku](https://id.heroku.com/login): Deployed to host and deploy the final project, providing a reliable platform for public access.
