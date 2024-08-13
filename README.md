@@ -20,6 +20,8 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 * [Deployment](#deployment)
    + [Before the deployment of the project](#before-the-deployment-of-the-project)
    + [Deployed in Heroku](#deployed-in-heroku)
+   + [Forking the GitHub Repository](#forking-the-github-repository)
+   + [Making a Local Clone](#making-a-local-clone)
 * [Credits](#credits)
    + [Content](#content)
 
@@ -116,6 +118,23 @@ Navigation Menu Validation and Option Selection | After validating the input wit
 + Select either `Automatic Deploys` or `Manual Deploys` and click `Deploy Branch`.
 
 6. Once deployment has been completed, click `View` to view the deployed project.
+
+### Forking the GitHub Repository
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the GitHub Repository
+2. At the top of the Repository between the Watch and Star buttons on the menu, is the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+To clone this repository, follow these steps:
+
+1. On the repository's GitHub page, click on the Code button.
+2. In the dropdown, click on Clone to copy the repository's URL to your clipboard.
+3. Open your terminal.
+4. Go to the directory where you want to clone the repository.
+5. Use the git clone command followed by the URL you copied, then hit ENTER.
+6. Done, cloned to your local machine!
 
 ## Credits
 ### Content
