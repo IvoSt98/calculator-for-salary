@@ -30,11 +30,18 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
    
 
 ## User Stories
+
+1. As a user, I want to accurately calculate my income and expenses to see the final result. Specifically, I want to ensure that all my financial data is correctly processed and displayed so that I have a clear understanding of my financial situation.
+2. As a user, I want to identify if I am spending too much money in a certain area to see where my expenses are concentrated. Specifically, I want the ability to analyze my spending patterns and make informed decisions to better regulate my income and expenses.
+3. As a user, I want to validate the data I input so that I can be confident it is correct. Specifically, I want the system to notify me if there are any errors or inconsistencies in the data I provide.
+4. As a user, I want to understand the program's function at a glance so that I can immediately know what it is for. Specifically, I want a clear and intuitive interface that guides me through the program's features without confusion.
+5. As a user, I want to know what I am doing wrong and how to correct it so that I can improve my financial management. Specifically, I want the program to provide feedback and suggestions when I make mistakes, helping me to learn and make better decisions.
+
 ## Features
 ## Future Features
 ## Wireframes
-## Technology Used
 
+## Technology Used
 ### Languages Used
 
 The application has been created with [Python](https://en.wikipedia.org/wiki/Python_(programming_language)).
