@@ -119,8 +119,8 @@ def take_data():
         print(Fore.CYAN + "                       "
               "Your Name for Expenses!\n")
         print("     "
-              "The name must to be only alphabetical signs"
-              "without any space!\n")
+              "The name must to be only alphabetical signs -"
+              " without any space!\n")
         print("Enter value for Name:")
         name = input("")
         clearScreen()
@@ -257,7 +257,7 @@ def menu(
     while True:
         print()
         print(Fore.CYAN + "                       "
-              "Your Table Menu!\n")
+              "Navigation Menu!\n")
         print("            "
               "Choose one of the following options:")
         print()
