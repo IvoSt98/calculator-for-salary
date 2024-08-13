@@ -12,6 +12,8 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 * [Future Features](#future-features)
 * [Wireframes](#wireframes)
 * [Technology Used](#technology-used)
+   + [Languages Used](#languages-used)
+   + [Libraries and Programs Used](#libraries-and-programs-used)
 * [Testing](#testing)
    + [Code Validation](#code-validation)
    + [Bugs](#bugs)
@@ -33,6 +35,22 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 ## Wireframes
 ## Technology Used
 
+### Languages Used
+
+The application has been created with [Python](https://en.wikipedia.org/wiki/Python_(programming_language)).
+
+### Libraries and Programs Used
+
++ [Lucidchart](https://www.lucidchart.com/pages/?): Used during the planning phase to create flowcharts, aiding in the visualization of the project's structure and flow.
++ [GitHub](https://github.com/): Used for version control and as a repository to store the project, ensuring code integrity and collaboration.
++ [GitPod](https://www.gitpod.io/): Served as the primary environment for writing code, committing changes, and pushing updates to GitHub, facilitating seamless development.
++ [Heroku](https://id.heroku.com/login): Deployed to host and deploy the final project, providing a reliable platform for public access.
++ [Colorama](https://pypi.org/project/colorama/): Employed to add color to terminal outputs, enhancing the visual experience during execution.
++ [Tabulate](https://pypi.org/project/tabulate/): Implemented to format and display expense data in well-organized tables, improving data readability.
++ [Os](https://docs.python.org/3/library/os.html): Leveraged to clear the screen when navigating between different menus or views, maintaining a clean user interface.
++ [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview): Utilized to assess and measure the quality of the web page, ensuring optimal performance and accessibility.
++ [PEP8 Online Checker](https://pep8ci.herokuapp.com/#): Used to validate Python code, ensuring adherence to coding standards and best practices.
+
 ## Testing
 ### Code Validation
 
@@ -43,7 +61,9 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 ### Bugs
 ### Further Testing
 
-1. Browsers and devices testing:
+1. Feedback from friends and family members was sought to identify any bugs or user experience issues.
+
+2. Browsers and devices testing:
 
 Browser | Outcome | Pass/Fail
 --- | --- | ---
@@ -52,8 +72,6 @@ Safari | The program starts but no user input is recognized and the program can'
 MacBook Air M1" | No issues with appearance or functionality. | Pass
 Iphone 15| The program doesen't start. | Fail
 Samsung Galaxy A22 | No issues with appearance or functionality. | Pass
-
-2. Feedback from friends and family members was sought to identify any bugs or user experience issues.
 
 3. Lighthouse testing on desktop screen:
 
