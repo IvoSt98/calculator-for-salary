@@ -39,6 +39,12 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 
 ## Features
 ## Future Features
++ Implement a section to add a spreadsheet, allowing users to save all pieces of information and track their spending progress effectively.
+
++ Update the program to show the selection menu first, enabling users to choose where to enter information by splitting it into different sections. This improvement will allow for more organized data entry and a better user experience.
+
++ Enhance the program by adding the ability for users to manage their saved inputs. This feature will allow users to select, edit, or delete any of their entries, even after they have been confirmed and saved to Google Sheets. Additionally, introduce an option to clear all expenses, enabling users to reset the tracker to zero when necessary.
+
 ## Flowchart
 
 [Lucidchart](https://www.lucidchart.com/pages/?) was used during the planning phase to create flowchart, aiding in the visualization of the project's structure and flow.
