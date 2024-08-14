@@ -45,6 +45,7 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 
 + Enhance the program by adding the ability for users to manage their saved inputs. This feature will allow users to select, edit, or delete any of their entries, even after they have been confirmed and saved to Google Sheets. Additionally, introduce an option to clear all expenses, enabling users to reset the tracker to zero when necessary.
 
++ Introduce a section where users can input data categorized by day, month, or year, allowing for more detailed and organized tracking of information over time.
 ## Flowchart
 
 [Lucidchart](https://www.lucidchart.com/pages/?) was used during the planning phase to create flowchart, aiding in the visualization of the project's structure and flow.
@@ -86,7 +87,7 @@ Browser | Outcome | Pass/Fail
 Google Chrome | No issues. | Pass
 Safari | The program starts but no user input is recognized and the program can't continue. | Fail
 MacBook Air M1" | No issues with appearance or functionality. | Pass
-Iphone 15| The program doesen't start. | Fail
+Iphone 15| The program doesen't start, probably because Iphone use Safari. | Fail
 Samsung Galaxy A22 | No issues with appearance or functionality. | Pass
 
 3. Lighthouse testing on desktop screen:
