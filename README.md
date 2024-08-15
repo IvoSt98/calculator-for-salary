@@ -38,6 +38,114 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 5. As a user, I want to know what I am doing wrong and how to correct it so that I can improve my financial management. Specifically, I want the program to provide feedback and suggestions when I make mistakes, helping me to learn and make better decisions.
 
 ## Features
+
+**Start Program**
+
+1. Welcome Banner:
++ The section begins with a welcoming banner, introducing users to the program and offering a clear message about the system’s purpose and functionality.
+
+2. Introduction Message:
++ Following the welcome banner, a brief explanation is provided, instructing users to first enter their monthly income. The system then outlines how this income will be distributed across various sections and the corresponding percentages.
+
+3. Section Explanations:
++ Each section is explained individually, helping users understand how to correctly enter their data. These explanations include examples for clarity, with the title of each section highlighted in a different color to distinguish it from the description.
+
+4. Important Notice:
++ In a standout color distinct from the titles and descriptions, the most crucial information is prominently displayed in the center of the program. It reads: "If the information you want to add doesn't apply to any of the columns, just add 0."
+
+5. Monthly Income Input:
++ The feature concludes with an input field where users can enter their monthly income, allowing them to begin the process of tracking and managing their finances.
+
+![Start function](readme-images/start-function-one.png) 
+![Start function Two](readme-images/start-function-two.png)
+
+**Taking data from the user**
+
+1. Expense Name Collection:
++ With the correct income data entered, the program proceeds to collect expenses data from the user.
++ A clear banner is displayed, indicating that the user needs to enter the name of the expense.
++ A brief message follows, explaining the types of data that will be accepted for the Expense Name.
++ Finally, the input field is provided for the user to enter the name of the expense.
+![Name Input](readme-images/name-input.png) 
+
+2. Needs Data Collection:
++ With the Expense Name correctly entered, the program will then prompt the user to provide Data for Needs.
++ A clear banner is displayed, indicating that the user needs to enter Data for Needs.
++ A brief message follows, explaining what data should be entered and advising that if the user does not wish to update this column, they should enter "0."
++ Finally, the input field is provided for the user to enter the Data for Needs.
+![Needs Input](readme-images/needs-input.png)
+
+3. Savings/Inv. Data Collection:
++ With the Needs Data correctly entered, the program will then prompt the user to provide Data for Savings/Inv.
++ A clear banner is displayed, indicating that the user needs to enter Data for Needs.
++ A brief message follows, explaining what data should be entered and advising that if the user does not wish to update this column, they should enter "0."
++ Finally, the input field is provided for the user to enter the Data for Needs.
+![Savings Input](readme-images/savings-input.png)
+
+4. Living Expenses Data Collection:
++ With the Savings/Inv. correctly entered, the program will then prompt the user to provide Data for Living Expenses.
++ A clear banner is displayed, indicating that the user needs to enter Data for Needs.
++ A brief message follows, explaining what data should be entered and advising that if the user does not wish to update this column, they should enter "0."
++ Finally, the input field is provided for the user to enter the Data for Needs.
+![Living Expenses Input](readme-images/living-expenses-input.png)
+
+**Navigation Menu**
++ After the user correctly enters the data for Living Expenses, they are directed to the navigation menu. The navigation menu is shown at this stage, rather than at the beginning of the program, because, at this point, the user is only able to enter information and view the table. In future stages of the project, this sequence may be updated.
+![Navigation Menu](readme-images/menu.png)
++ A clear banner is presented, indicating that this is the navigation menu.
++ On the right side of the screen, the user can choose one of three options:
+1. Selecting this option will allow the user to start entering information again, beginning with the name of the expense, followed by needs, savings, and living expenses and returning to the navigation menu.
+2. This option will redirect the user to a new menu to see the table.
+3. Selecting this option will terminate the program.
+![Table Menu](readme-images/exit-program.png)
+
+
+**Table Menu**
++ After successfully entering Option 2, the user will be directed to the Table Menu. This stage provides options for viewing and interacting with your data.
++ A clear banner is presented, indicating that this is the Table Menu.
+![Table Menu](readme-images/table-menu.png)
+1. Selecting Option 1 the user will be able to see the table without any calculations(just the raw information how it was added). When the option it choosen the user will be able to see the table with the table menu under it(to choose another option after that if he wants).
+![Table Without Calculations](readme-images/table-without-calc.png)
+2. Selecting Option 2 the user will be able to see the table with all calculations applied. This view will include calculated totals and summaries.When the option it choosen the user will be able to see the table with the table menu under it(to choose another option after that if he wants).
+![Table With Calculations](readme-images/table-with-calc.png) 
+3. Selecting Option 3(Go back) the user it will be send to the previos menu(Navigation menu).
+
+**Input Validation Process**
+
++ Each time users provide input, the program performs validation to ensure the data meets required standards. Before entering any data, users are informed about the specific type of input needed.
+
++ If an invalid input is detected, an error message is displayed, prompting users to re-enter their data. This process repeats in a loop until valid input is provided.
+
++ For single-letter inputs, both uppercase and lowercase letters are accepted. Inputs cannot be empty. Amounts must be entered as positive numbers, and negative numbers are not permitted. No empty inputs are allowed, ensuring that all required fields are filled correctly.
+
+Screenshots for all possibility invalid inputs:
+
++ Income input:
+
+![Testing Income](readme-images/test-income-one.png) 
+![Testing Income Two](readme-images/test-income-two.png) 
++ Name for Expenses input:
+
+![Name Input Error](readme-images/name-input-error.png) 
++ Needs input:
+
+1.![Needs Input Error One](readme-images/needs-input-error-one.png) 
+2.![Needs Input Error Two](readme-images/needs-input-error-two.png) 
++ Savings input:
+
+1.![Savings Input Error One](readme-images/savings-input-error-one.png) 
+2.![Savings Input Error Two](readme-images/savings-input-error-two.png)
++ Living Expenses input:
+
+1.![Living Expenses Input Error One](readme-images/living-expenses-error-one.png) 
+2.![Living Expenses Error Two](readme-images/living-expenses-error-one.png) 
++ Navigation menu input:
+
+![Navigation Menu Error](readme-images/menu-error.png) 
++ Table menu input:
+
+![Table Menu Input Error](readme-images/table-menu-error.png)
+
 ## Future Features
 + Implement a section to add a spreadsheet, allowing users to save all pieces of information and track their spending progress effectively.
 
@@ -115,7 +223,7 @@ Navigation Menu Validation and Option Selection | After successful validation of
 Table Menu Input Validation | If the input contains invalid characters such as alphabetic signs or special symbols, whitespace, negative value an error message is displayed. | ![Table Menu Input Error](readme-images/table-menu-error.png) | Pass
 Table Menu Input Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3),if the user selects option 1 (to see the table without calculations), the table without calculations will be  displayed at the top of the screen. Below the table, the Table Menu with possible choices is presented again. | ![Table Without Calculations](readme-images/table-without-calc.png) | Pass
 Table Menu Input Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3), if the user selects option 2 (to see the table with calculations), the table with calculations will be  displayed at the top of the screen. Below the table, the Table Menu with possible choices is presented again. | ![Table With Calculations](readme-images/table-with-calc.png) | Pass
-Table Menu Input Validation and Option Selection | After validating the input with possible choices (1, 2, 3), if the user selects option 3 (to go back), the program transitions back to the Navigation Menu. | ![Table With Calculations](readme-images/table-menu.png) | Pass
+Table Menu Input Validation and Option Selection | After validating the input with possible choices (1, 2, 3), if the user selects option 3 (to go back), the program transitions back to the Navigation Menu. |  | Pass
 Navigation Menu Validation and Option Selection | After validating the input with possible choices (1, 2, 3), if the user selects option 3 (to exit the program), the program will close.| ![Table Menu](readme-images/exit-program.png) | Pass
 
 ## Deployment
