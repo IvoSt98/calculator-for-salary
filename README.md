@@ -184,6 +184,12 @@ The application has been created with [Python](https://en.wikipedia.org/wiki/Pyt
 ![Pep8ci Validation](readme-images/pep8ci-validation.png)
 
 ### Bugs
+
+1. Bug Fix: Data Overwrite on New Entries:
++ I encountered a bug where each new data entry erased previous information, retaining only the latest input. To fix this, I introduced a `global constant` that captures and stores the initial data in the main function. Then,in the `def menu: option 1`(adding new information), I updated the logic to `append new data` instead of overwriting the existing entries. Finally, I adjusted the `build_table function` to ensure all data is displayed correctly. This solution successfully resolved the data persistence issue.
+2. Bug Fix: Incomplete Expense Calculation
++ I encountered a bug where the income minus expenses calculation only worked for the first data entry, ignoring subsequent entries. After some trial and error, I resolved this by updating the `calculate_expenses function` to include parameters for both individual sections and their corresponding calculations. In the `main function`, I ensured all six parameters were correctly aligned with each other. I then updated these parameters in the `menu function: option 1`, to ensure they reflected the correct calculations. Finally, I modified the `build_table function` to display a new column with the calculated values when the user selects the option to view the table with calculations.
+
 ### Further Testing
 
 1. Feedback from friends and family members was sought to identify any bugs or user experience issues.
