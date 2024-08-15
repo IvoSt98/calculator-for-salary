@@ -5,7 +5,9 @@ import colorama
 from colorama import Back, Fore, Style, init
 init(autoreset=True)
 
-"""Global const"""
+"""
+Global const
+"""
 DATA = []
 
 
@@ -29,7 +31,7 @@ def exit_program():
 
 def start():
     """
-    The function expalin how the program it's working and for what it is.
+    The function explains how the program works and for what it is.
     """
     print(Fore.CYAN + "                       "
           "Welcome to Your Salary/Income Calculator!")
@@ -39,17 +41,17 @@ def start():
     print(Fore.GREEN + "First, enter your income for a month ")
     print(Fore.GREEN + "which will be divided as follows:\n")
     print("     "
-          "NEEDS - 40 percentages ")
+          "NEEDS - 40 percent ")
     print("     "
-          "SAVINGS/INVESTMENTS - 40 percentages")
+          "SAVINGS/INVESTMENTS - 40 percent")
     print("     "
-          "LIVING EXPENSES - 20 percentages")
+          "LIVING EXPENSES - 20 percent")
     print()
     print(Fore.GREEN + "Example for NEEDS:\n")
     print("     "
-          "This is your insuarance for the")
+          "This is your insurance for the")
     print("     "
-          "car, bills, credits, food and etc.")
+          "car, bills, credits, food, etc.")
     print("     "
           "The things without you can't live.")
     print()
@@ -65,7 +67,7 @@ def start():
     print("     "
           "Here you need to fill your money for")
     print("     "
-          "cigaretes, parties, restaurants and etc.")
+          "cigarettes, parties, restaurants and etc.")
     print("     "
           "Something without you can survive.")
     print()
@@ -77,10 +79,10 @@ def start():
 
 def get_income():
     """
-    The function calculate the sum to be always float,
+    The function calculates the sum to be always floating,
     if it's a string it'll be
-    displayed error, if it's less then 4 digits
-    it will print again error message.
+    displayed error, if it's less than 4 digits
+    it will print again an error message.
     """
     while True:
         try:
@@ -99,7 +101,7 @@ def get_income():
 
 def calculate_income(income):
     """
-    The def calculate the income in % for needs, savings
+    The def calculates the income in % for needs, savings
     and living
     """
     needs = 0.4 * income
@@ -110,16 +112,16 @@ def calculate_income(income):
 
 def take_data():
     """
-    The function take data from the user.
-    Check the inputs if it's validate,
-    and pass the data to the paaramethers.
+    The function takes data from the user.
+    Check the inputs if it's validated,
+    and pass the data to the parameters.
     """
     while True:
         print("")
         print(Fore.CYAN + "                       "
               "Your Name for Expenses!\n")
         print("     "
-              "The name must to be only alphabetical signs -"
+              "The name must be only alphabetical signs -"
               " without any space!\n")
         print("Enter value for Name:")
         name = input("")
@@ -141,7 +143,7 @@ def take_data():
             print(Fore.CYAN + "                       "
                   "Your Data for Needs!\n")
             print("     "
-                  "If your expense it is not Needs, then add - 0\n")
+                  "If your expense is not Needs, then add - 0\n")
             print("Enter value for Needs:")
             needs_value = float(input(""))
             if needs_value < 0:
@@ -151,7 +153,7 @@ def take_data():
             print(Fore.CYAN + "                       "
                   "Your Data for Savings/Inv.!\n")
             print("     "
-                  "If your expense it is not Savings/Inv., then add - 0\n")
+                  "If your expense is not Savings/Inv., then add - 0\n")
             print("Enter new Savings/Investments:")
             savings_value = float(input(""))
             if savings_value < 0:
@@ -161,7 +163,7 @@ def take_data():
             print(Fore.CYAN + "                       "
                   "Your Your Data for Living Expenses!\n")
             print("     "
-                  "If your expense it is not Living Expenses, then add - 0\n")
+                  "If your expense is not Living Expenses, then add - 0\n")
             print("Enter new Living Expenses:")
             living_value = float(input(""))
             if living_value < 0:
@@ -178,10 +180,10 @@ def calculate_expenses(
     needs_value, savings_value, living_value
 ):
     """
-    The def subtracts right operand from
-    the left operand and assign the result to left operand.
+    The def subtracts the right operand from
+    the left operand and assigns the result to the left operand.
     And after that return all left operands.
-    It will be in use to calculate the end result.
+    It will be used to calculate the result.
     """
     calculation_needs -= needs_value
     calculation_savings -= savings_value
@@ -196,7 +198,7 @@ def build_table(
 ):
     """
     The function, build a table.
-    Give an options to navigate between
+    Give an option to navigate between
     user to see the table with or
     without calculations, or
     to continue to continue to
