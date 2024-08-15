@@ -1,6 +1,6 @@
 # Salary/Income Calculator
 
-[Lived project can be viewed here](https://calculator-for-salary-6e04ba66476c.herokuapp.com/).
+[The live project can be viewed here](https://calculator-for-salary-6e04ba66476c.herokuapp.com/)
 
 The Salary/Income Calculator is an open-source, interactive command-line utility tailored for efficient income and expense management. It applies the 40/40/20 rule, a guiding principle in wealth creation. According to this rule, 40% of your gross income should be allocated for taxes/needs, another 40% should be saved/invested, and the remaining 20% should cover living expenses. This tool simplifies financial tracking, ensuring users can easily implement this strategy to optimize their savings and budgeting efforts.
 
@@ -32,7 +32,7 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 ## User Stories
 
 1. As a user, I want to accurately calculate my income and expenses to see the final result. Specifically, I want to ensure that all my financial data is correctly processed and displayed so that I have a clear understanding of my financial situation.
-2. As a user, I want to identify if I am spending too much money in a certain area to see where my expenses are concentrated. Specifically, I want the ability to analyze my spending patterns and make informed decisions to better regulate my income and expenses.
+2. As a user, I want to identify if I am spending too much money in a certain area to see where my expenses are concentrated. Specifically, I like the ability to analyze my spending patterns and make informed decisions to regulate my income and expenses better.
 3. As a user, I want to validate the data I input so that I can be confident it is correct. Specifically, I want the system to notify me if there are any errors or inconsistencies in the data I provide.
 4. As a user, I want to understand the program's function at a glance so that I can immediately know what it is for. Specifically, I want a clear and intuitive interface that guides me through the program's features without confusion.
 5. As a user, I want to know what I am doing wrong and how to correct it so that I can improve my financial management. Specifically, I want the program to provide feedback and suggestions when I make mistakes, helping me to learn and make better decisions.
@@ -94,7 +94,7 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 ![Navigation Menu](readme-images/menu.png)
 + A clear banner is presented, indicating that this is the navigation menu.
 + On the right side of the screen, the user can choose one of three options:
-1. Selecting this option will allow the user to start entering information again, beginning with the name of the expense, followed by needs, savings, and living expenses and returning to the navigation menu.
+1. Selecting this option will allow the user to start entering information again, beginning with the name of the expense, followed by needs, savings, and living expenses, and returning to the navigation menu.
 2. This option will redirect the user to a new menu to see the table.
 3. Selecting this option will terminate the program.
 ![Table Menu](readme-images/exit-program.png)
@@ -102,17 +102,17 @@ The Salary/Income Calculator is an open-source, interactive command-line utility
 
 **Table Menu**
 + After successfully entering Option 2, the user will be directed to the Table Menu. This stage provides options for viewing and interacting with your data.
-+ A clear banner is presented, indicating that this is the Table Menu.
++ A clear banner is presented, indicating the Table Menu.
 ![Table Menu](readme-images/table-menu.png)
-1. Selecting Option 1 the user will be able to see the table without any calculations(just the raw information how it was added). When the option it choosen the user will be able to see the table with the table menu under it(to choose another option after that if he wants).
+1. Selecting Option 1, the user can see the table without any calculations(just the raw information on how it was added). When the option is chosen the user will be able to see the table with the table menu under it(to choose another option after that if he wants).
 ![Table Without Calculations](readme-images/table-without-calc.png)
-2. Selecting Option 2 the user will be able to see the table with all calculations applied. This view will include calculated totals and summaries.When the option it choosen the user will be able to see the table with the table menu under it(to choose another option after that if he wants).
+2. Selecting Option 2 the user can see the table with all calculations applied. This view will include calculated totals and summaries. When the option it chosen the user will be able to see the table with the table menu under it(to choose another option after that if he wants).
 ![Table With Calculations](readme-images/table-with-calc.png) 
-3. Selecting Option 3(Go back) the user it will be send to the previos menu(Navigation menu).
+3. Selecting Option 3(Go back) the user will be sent to the previous menu(Navigation menu).
 
 **Input Validation Process**
 
-+ Each time users provide input, the program performs validation to ensure the data meets required standards. Before entering any data, users are informed about the specific type of input needed.
++ Each time users provide input, the program performs validation to ensure the data meets the required standards. Before entering any data, users are informed about the specific type of input needed.
 
 + If an invalid input is detected, an error message is displayed, prompting users to re-enter their data. This process repeats in a loop until valid input is provided.
 
@@ -156,7 +156,7 @@ Screenshots for all possibility invalid inputs:
 + Introduce a section where users can input data categorized by day, month, or year, allowing for more detailed and organized tracking of information over time.
 ## Flowchart
 
-[Lucidchart](https://www.lucidchart.com/pages/?) was used during the planning phase to create flowchart, aiding in the visualization of the project's structure and flow.
+[Lucidchart](https://www.lucidchart.com/pages/?) was used during the planning phase to create a flowchart, aiding in the visualization of the project's structure and flow.
 ![Flow Chart](readme-images/flow-chart.png)
 
 ## Technology Used
@@ -166,7 +166,7 @@ The application has been created with [Python](https://en.wikipedia.org/wiki/Pyt
 
 ### Libraries and Programs Used
 
-+ [Lucidchart](https://www.lucidchart.com/pages/?): Used during the planning phase to create flowchart, aiding in the visualization of the project's structure and flow.
++ [Lucidchart](https://www.lucidchart.com/pages/?): Used during the planning phase to create a flowchart, aiding in the visualization of the project's structure and flow.
 + [GitHub](https://github.com/): Used for version control and as a repository to store the project, ensuring code integrity and collaboration.
 + [GitPod](https://www.gitpod.io/): Served as the primary environment for writing code, committing changes, and pushing updates to GitHub, facilitating seamless development.
 + [Heroku](https://id.heroku.com/login): Deployed to host and deploy the final project, providing a reliable platform for public access.
@@ -195,7 +195,7 @@ Browser | Outcome | Pass/Fail
 Google Chrome | No issues. | Pass
 Safari | The program starts but no user input is recognized and the program can't continue. | Fail
 MacBook Air M1" | No issues with appearance or functionality. | Pass
-Iphone 15| The program doesen't start, probably because Iphone use Safari. | Fail
+IPhone 15 | The program doesn't start, probably because the iPhone uses Safari. | Fail
 Samsung Galaxy A22 | No issues with appearance or functionality. | Pass
 
 3. Lighthouse testing on desktop screen:
@@ -213,15 +213,15 @@ Expenses Name Input Validation | If the input contains invalid characters such a
 After the validation of the input for Expenses Name Input | After successful validation of the Expenses Name Input, the program transitions to the Data for Needs input. The banner is displayed correctly at the top, with a brief guide on how to fill out the input field shown accurately below it. The input field is positioned correctly on the screen.  | ![Needs Input](readme-images/needs-input.png) | Pass
 Data for Needs Input Validation | 1. If the input contains invalid characters such as alphabetic signs an error message is displayed. 2. Or special symbols, whitespace, negative value an error message is displayed. | 1.![Needs Input Error One](readme-images/needs-input-error-one.png) 2.![Needs Input Error Two](readme-images/needs-input-error-two.png) | Pass
 After the validation of the input for Data Needs | After successful validation of the Data Needs Input, the program transitions to the Data for Savings/Inv. input. The banner is displayed correctly at the top, with a brief guide on how to fill out the input field shown accurately below it. The input field is positioned correctly on the screen.  | ![Savings Input](readme-images/savings-input.png) | Pass
-Data for Savings/Inv. Input Validation | 1. If the input contains invalid characters such as alphabetic signs an error message is displayed and will sent it back to the Needs Input. 2. Or special symbols, whitespace, negative value an error message is displayed and will send the user back to the Needs Input. | 1.![Savings Input Error One](readme-images/savings-input-error-one.png) 2.![Savings Input Error Two](readme-images/savings-input-error-two.png) | Pass
+Data for Savings/Inv. Input Validation | 1. If the input contains invalid characters such as alphabetic signs an error message is displayed and will sent back to the Needs Input. 2. Or special symbols, whitespace, or negative value an error message is displayed and will send the user back to the Needs Input. | 1.![Savings Input Error One](readme-images/savings-input-error-one.png) 2.![Savings Input Error Two](readme-images/savings-input-error-two.png) | Pass
 After the validation of the input for Savings/Inv. | After successful validation of the Savings/Inv. Input, the program transitions to the Data for Living Expenses input. The banner is displayed correctly at the top, with a brief guide on how to fill out the input field shown accurately below it. The input field is positioned correctly on the screen.  | ![Living Expenses Input](readme-images/living-expenses-input.png) | Pass
-Data for Living Expenses Input Validation | 1. If the input contains invalid characters such as alphabetic signs an error message is displayed and will sent it back to the Needs Input. 2. Or special symbols, whitespace, negative value an error message is displayed and will send the user back to the Needs Input. | 1.![Living Expenses Input Error One](readme-images/living-expenses-error-one.png) 2.![Living Expenses Error Two](readme-images/living-expenses-error-one.png) | Pass
-After the validation of the input Living Expenses | After successful validation of the Living Expenses Input, the program transitions to the Navigation Menu, which give to the user 3 defferent options. The banner is displayed correctly at the top, with a brief guide on how to fill out the input field shown accurately below it. The input field is positioned correctly on the screen.  | ![Navigation Menu](readme-images/menu.png) | Pass
-Navigation Menu Input Validation | If the input contains invalid characters such as alphabetic signs or special symbols, whitespace, negative value an error message is displayed. | ![Navigation Menu Error](readme-images/menu-error.png) 
-Navigation  Menu Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3), if the user selects option 1 (to add more data), the program transitions back to the Expenses Name input screen. The previos steps repeat until the user returns to the Main Table Menu function. | | Pass
-Navigation Menu Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3), if the user selects option 2 (to see the table), the program transitions to new function with banner "Your Table Menu!" which position is correct. Under the bannerpossible choices (1, 2, 3) for the user to choose the future steps. And in the end input where the user can add his choice. | ![Table Menu](readme-images/table-menu.png) | Pass
-Table Menu Input Validation | If the input contains invalid characters such as alphabetic signs or special symbols, whitespace, negative value an error message is displayed. | ![Table Menu Input Error](readme-images/table-menu-error.png) | Pass
-Table Menu Input Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3),if the user selects option 1 (to see the table without calculations), the table without calculations will be  displayed at the top of the screen. Below the table, the Table Menu with possible choices is presented again. | ![Table Without Calculations](readme-images/table-without-calc.png) | Pass
+Data for Living Expenses Input Validation | 1. If the input contains invalid characters such as alphabetic signs an error message is displayed and will sent back to the Needs Input. 2. Or special symbols, whitespace, or negative value an error message is displayed and will send the user back to the Needs Input. | 1.![Living Expenses Input Error One](readme-images/living-expenses-error-one.png) 2.![Living Expenses Error Two](readme-images/living-expenses-error-one.png) | Pass
+After the validation of the input Living Expenses | After successful validation of the Living Expenses Input, the program transitions to the Navigation Menu, which gives the user 3 different options. The banner is displayed correctly at the top, with a brief guide on how to fill out the input field shown accurately below it. The input field is positioned correctly on the screen.  | ![Navigation Menu](readme-images/menu.png) | Pass
+Navigation Menu Input Validation | If the input contains invalid characters such as alphabetic signs or special symbols, whitespace, or negative value an error message is displayed. | ![Navigation Menu Error](readme-images/menu-error.png) 
+Navigation  Menu Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3), if the user selects option 1 (to add more data), the program transitions back to the Expenses Name input screen. The previous steps repeat until the user returns to the Main Table Menu function. | | Pass
+Navigation Menu Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3), if the user selects option 2 (to see the table), the program transitions to a new function with the banner "Your Table Menu!" which position is correct. Under the possible choices (1, 2, 3) the user to choose the future steps. And in the end, input where the user can add his choice. | ![Table Menu](readme-images/table-menu.png) | Pass
+Table Menu Input Validation | If the input contains invalid characters such as alphabetic signs or special symbols, whitespace, or negative value an error message is displayed. | ![Table Menu Input Error](readme-images/table-menu-error.png) | Pass
+Table Menu Input Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3), if the user selects option 1 (to see the table without calculations), the table without calculations will be  displayed at the top of the screen. Below the table, the Table Menu with possible choices is presented again. | ![Table Without Calculations](readme-images/table-without-calc.png) | Pass
 Table Menu Input Validation and Option Selection | After successful validation of the input with possible choices (1, 2, 3), if the user selects option 2 (to see the table with calculations), the table with calculations will be  displayed at the top of the screen. Below the table, the Table Menu with possible choices is presented again. | ![Table With Calculations](readme-images/table-with-calc.png) | Pass
 Table Menu Input Validation and Option Selection | After validating the input with possible choices (1, 2, 3), if the user selects option 3 (to go back), the program transitions back to the Navigation Menu. |  | Pass
 Navigation Menu Validation and Option Selection | After validating the input with possible choices (1, 2, 3), if the user selects option 3 (to exit the program), the program will close.| ![Table Menu](readme-images/exit-program.png) | Pass
@@ -239,10 +239,10 @@ Navigation Menu Validation and Option Selection | After validating the input wit
 + The update isn't complete until you add, commit, and push the changes to GitHub (keep this in mind).
 
 2. Creating an account in [Heroku](https://id.heroku.com/login).
-+ From the Heroku dashbord click on `Create new app`.
++ From the Heroku dashboard click on `Create new app`.
 + Enter a name and select a region for the project deployment, then click `Create App`.
 
-3. Navigate to `Settings`tab.
+3. Navigate to the `Settings` tab.
 + In the `Config Vars` add the following information:
 
       KEY = 'PORT', VALUE = '8000'
@@ -251,13 +251,13 @@ Navigation Menu Validation and Option Selection | After validating the input wit
 4. Updating `Buildpacks` in `Settings`:
 + Click `Add Buildpacks`.
 + Select `Python` and then click `Save Changes`.
-+ Click `Add Buildpacks` again to add another Buildpacks.
++ Click `Add Buildpacks` again to add other Buildpacks.
 + Select `nodejs` and click `Save Changes`.
 
 5. Going to the `Deploy` section.
 + Choose `GitHub` as the `Deployment method`.
 + Confirm the connection to `GitHub`.
-+ Search for the project by the name our template and click the button `Connect`.
++ Search for the project by the name of our template and click the button `Connect`.
 + Select either `Automatic Deploys` or `Manual Deploys` and click `Deploy Branch`.
 
 6. Once deployment has been completed, click `View` to view the deployed project.
